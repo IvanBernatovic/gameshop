@@ -13,4 +13,26 @@
 
 Route::get('/', 'WelcomeController@index');
 
-Route::get('/admin', 'AdminController@index');
+Route::group(['prefix' => 'admin'], function()
+{
+	Route::get('/', 'AdminController@index');
+
+	/**
+	 * Category related routes
+	 */
+	Route::get('/categories', [
+		'as' => 'AdminCategoryIndex',
+		'uses' => 'AdminCategoryController@index'
+	]);
+
+	Route::get('/categories/create', [
+		'as' => 'AdminCategoryCreate',
+		'uses' => 'AdminCategoryController@create'
+	]);
+
+	Route::post('/categories', [
+		'as' => 'AdminCategoryStore',
+		'uses' => 'AdminCategoryController@store'
+	]);
+});
+
