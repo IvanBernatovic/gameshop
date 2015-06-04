@@ -14,21 +14,33 @@ class CreateProductsTable extends Migration {
 	{
 		Schema::create('products', function(Blueprint $table)
 		{
+			/**
+			 * Basic product info
+			 */
 			$table->increments('id');
-			$table->boolean('active');
+
+			// Active in store
+			$table->boolean('active')->default('false');
 			$table->string('name', 500)->unique()->index();
 			$table->integer('category_id')->unsigned()->nullable();
 			$table->text('description');
 			$table->decimal('price', 8, 2);
-			$table->string('sku', 500);
+			$table->string('image', 500);
+
+			// Discounted price, NULL if there's no discount
+			$table->decimal('discounted_price', 8, 2)->nullable();
+
+			/**
+			 * Stock related info
+			 */
+			$table->string('sku', 500)->unique();
 			$table->integer('quantity')->nullable();
 			$table->decimal('weight', 8, 2);
-			$table->string('image', 500);
 
 			$table->timestamps();
 
 			/**
-			 * Indexes and keys
+			 * Indices and keys
 			 */
 			$table->foreign('category_id')
 				->references('id')->on('categories')

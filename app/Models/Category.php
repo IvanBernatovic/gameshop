@@ -99,4 +99,11 @@ class Category extends Node {
   // to hook your own callbacks/observers into this events:
   // http://laravel.com/docs/5.0/eloquent#model-events
 
+  /**
+   * Returns all products in category
+   * @return App\Models\Product Collection of Product model
+   */
+  public function products(){
+    return $this->hasMany('App\Models\Product');
+  }
 }

@@ -21,6 +21,7 @@ class Users extends Migration {
 			$table->string('name', 500);
 			$table->string('email')->unique();
 			$table->string('password', 60);
+			$table->string('telephone')->nullable();
 
 			/**
 			 * Address information
@@ -30,6 +31,12 @@ class Users extends Migration {
 			$table->sring('state')->nullable();
 			$table->string('ZIP');
 			$table->string('city');
+
+			/**
+			 * Account activation info
+			 */
+			$table->boolean('activated')->default('false');
+			$table->string('code', 30)->nullable();
 
 			$table->rememberToken();
 			$table->timestamps();
