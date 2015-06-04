@@ -20,12 +20,12 @@ class CreateProductsTable extends Migration {
 			$table->increments('id');
 
 			// Active in store
-			$table->boolean('active')->default('false');
-			$table->string('name', 500)->unique()->index();
+			$table->boolean('active')->default(false);
+			$table->string('name')->unique()->index();
 			$table->integer('category_id')->unsigned()->nullable();
 			$table->text('description');
 			$table->decimal('price', 8, 2);
-			$table->string('image', 500);
+			$table->string('image');
 
 			// Discounted price, NULL if there's no discount
 			$table->decimal('discounted_price', 8, 2)->nullable();
@@ -33,7 +33,7 @@ class CreateProductsTable extends Migration {
 			/**
 			 * Stock related info
 			 */
-			$table->string('sku', 500)->unique();
+			$table->string('sku')->unique();
 			$table->integer('quantity')->nullable();
 			$table->decimal('weight', 8, 2);
 
