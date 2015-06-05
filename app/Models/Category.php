@@ -13,6 +13,8 @@ class Category extends Node {
    */
   protected $table = 'categories';
 
+  protected $fillable = ['name', 'slug'];
+
   //////////////////////////////////////////////////////////////////////////////
 
   //

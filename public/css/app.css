@@ -5864,4 +5864,9 @@ body {
 .main .page-header {
   margin-top: 0; }
 
+div.categories {
+  margin-top: 10px;
+  padding: 7px;
+  border: solid 1px grey; }
+
 /*# sourceMappingURL=app.css.map */
