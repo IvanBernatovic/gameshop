@@ -34,5 +34,30 @@ Route::group(['prefix' => 'admin'], function()
 		'as' => 'AdminCategoryStore',
 		'uses' => 'AdminCategoryController@store'
 	]);
+
+	Route::get('/categories/{category}', [
+		'as' => 'AdminCategoryShow',
+		'uses' => 'AdminCategoryController@show'
+	]);
+
+	Route::get('/categories/{category}/edit', [
+		'as' => 'AdminCategoryEdit',
+		'uses' => 'AdminCategoryController@edit'
+	]);
+
+	Route::patch('/categories/{category}', [
+		'as' => 'AdminCategoryUpdate',
+		'uses' => 'AdminCategoryController@update'
+	]);
+
+	Route::get('/categories/{category}/delete', [
+		'as' => 'AdminCategoryDelete',
+		'uses' => 'AdminCategoryController@delete'
+	]);
+
+	Route::delete('/categories/{category}', [
+		'as' => 'AdminCategoryDestroy',
+		'uses' => 'AdminCategoryController@destroy'
+	]);
 });
 

@@ -7,7 +7,7 @@
   </ul>
   <ul class="nav nav-sidebar">
     <li><a href="">Orders</a></li>
-    <li><a href="">Categories</a></li>
+    <li><a href="{{ route('AdminCategoryIndex') }}">Categories</a></li>
     <li><a href="">Products</a></li>
     <li><a href="">Another nav item</a></li>
     <li><a href="">More navigation</a></li>

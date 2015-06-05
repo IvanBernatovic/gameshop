@@ -16,7 +16,7 @@
 		</thead>
 		<tbody>
 			@foreach($categories as $category)
-			<tr data-href="{{ route('AdminCategoryCreate') }}">
+			<tr data-href="{{ route('AdminCategoryShow', $category->id) }}">
 				<td>{{ $category->id }}</td>
 				<td>{{ $category->name }}</td>
 				<td>{{ $category->slug }}</td>
