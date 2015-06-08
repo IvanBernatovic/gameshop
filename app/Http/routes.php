@@ -77,5 +77,30 @@ Route::group(['prefix' => 'admin'], function()
 		'as' => 'AdminProductStore',
 		'uses' => 'AdminProductController@store'
 	]);
+
+	Route::get('/products/{product}', [
+		'as' => 'AdminProductShow',
+		'uses' => 'AdminProductController@show'
+	]);
+
+	Route::get('/products/{product}/edit', [
+		'as' => 'AdminProductEdit',
+		'uses' => 'AdminProductController@edit'
+	]);
+
+	Route::patch('/products/{product}', [
+		'as' => 'AdminProductUpdate',
+		'uses' => 'AdminProductController@update'
+	]);
+
+	Route::get('/products/{product}/delete', [
+		'as' => 'AdminProductDelete',
+		'uses' => 'AdminProductController@delete'
+	]);
+
+	Route::delete('/products/{product}', [
+		'as' => 'AdminProductDestroy',
+		'uses' => 'AdminProductController@destroy'
+	]);
 });
 

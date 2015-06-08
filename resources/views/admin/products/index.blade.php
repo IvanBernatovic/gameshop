@@ -13,17 +13,19 @@
 				<th>SKU</th>
 				<th>Slug</th>
 				<th>Price</th>
+				<th>Quantity</th>
 				<th>Category slug</th>	
 			</tr>
 		</thead>
 		<tbody>
 			@foreach($products as $product)
-			<tr data-href="">
+			<tr data-href="{{ route('AdminProductShow', $product->id) }}">
 				<td>{{ $product->id }}</td>
 				<td>{{ $product->name }}</td>
 				<td>{{ $product->sku }}</td>
 				<td>{{ $product->slug }}</td>
 				<td>${{ $product->price }}</td>
+				<td>{{ $product->quantity }}</td>
 				<td>{{ $product->category->slug }}</td>
 			</tr>
 			@endforeach

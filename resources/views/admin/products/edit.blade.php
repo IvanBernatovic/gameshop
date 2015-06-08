@@ -1,9 +1,9 @@
-@extends('admin.master', ['title' => 'Admin panel - Create new product'])
+@extends('admin.master', ['title' => 'Edit product'])
 
 @section('content')
 <div class="col-sm-6">
 	<div class="form">
-		{!! Form::open(['method' => 'POST', 'url'=> route('AdminProductStore'), 'files' => true]) !!}
+		{!! Form::model($product, ['method' => 'PATCH', 'url'=> route('AdminProductUpdate', $product), 'files' => true]) !!}
 		<div class="form-group">
 			{!! Form::label('name', 'Name:') !!}
 			{!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -45,7 +45,7 @@
 			{!! Form::checkbox('active', '1' ) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::submit('Create product',  ['class' => 'btn btn-primary form-control']) !!}
+			{!! Form::submit('Update product',  ['class' => 'btn btn-primary form-control']) !!}
 		</div>
 		{!! Form::close() !!}
 	</div>

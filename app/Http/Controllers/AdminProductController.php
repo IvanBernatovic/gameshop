@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Requests\ProductRequest;
+use App\Http\Requests\EditProductRequest;
 use App\Http\Controllers\Controller;
 
 /**
@@ -13,6 +14,8 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 
 class AdminProductController extends Controller {
+
+	const DEFAULT_IMG = "img/no_product_img.jpg";
 
 	/**
 	 * Display a listing of the Product model instances.
@@ -62,29 +65,39 @@ class AdminProductController extends Controller {
 		$input = $request->except('image');
 		$image = $request->file('image');
 
-		// Picture name will be same as SKU
-		$name = $input['sku'];
 
-		// Extenstion of original picture
-		$extension = '.' . $image->getClientOriginalExtension();
+		if($image != null){
+			// Picture name will be same as SKU
+			$name = $input['sku'];
 
-		// Set paths for full image and thumbnail
-		$imagePath = 'img/' . $name . $extension;
-		$thumbnailPath = 'img/thumbs/' . $name . $extension;
+			// Extenstion of original picture
+			$extension = '.' . $image->getClientOriginalExtension();
 
-		// Save original picture
-		\Image::make($image->getRealPath())->save(public_path($imagePath));
+			// Set paths for full image and thumbnail
+			$imagePath = 'img/' . $name . $extension;
+			$thumbnailPath = 'img/thumbs/' . $name . $extension;
 
-		// Save resized thumbnail
-		\Image::make($image->getRealPath())->resize(300, null, function($constraint){
-			$constraint->aspectRatio();
-		})->save(public_path($thumbnailPath));
+			// Save original picture
+			\Image::make($image->getRealPath())->save(public_path($imagePath));
+
+			// Save resized thumbnail
+			\Image::make($image->getRealPath())->resize(300, null, function($constraint){
+				$constraint->aspectRatio();
+			})->save(public_path($thumbnailPath));
+		}
+		else {
+
+			// Set default 'No image avaliable' images
+			$imagePath = self::DEFAULT_IMG;
+			$thumbnailPath = self::DEFAULT_IMG;
+		}
 
 		// Create Product model and save pictures
 		$product = Product::create($input);
 		$product->image = $imagePath;
 		$product->image_thumb = $thumbnailPath;
 		$product->save();
+	
 
 		return redirect(route('AdminProductIndex'));
 	}
@@ -95,42 +108,98 @@ class AdminProductController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		//
+	public function show(Product $product){
+		
+		return view('admin.products.show')->with(compact('product'));
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
+	 * Shows form for editing product
+	 * @param  Product $product
 	 * @return Response
 	 */
-	public function edit($id)
-	{
-		//
+	public function edit(Product $product){
+
+		/**
+		 * Select all categories that have no child categories and return them in form of 
+		 * associative array (id => slug) for purpose of selecting product category
+		 * 
+		 * @var Category
+		 */
+		$categories = Category::allLeaves()->lists('slug', 'id');
+
+		$categories[null] = 'No category';
+
+		return view('admin.products.edit')->with(compact('product', 'categories'));
 	}
 
 	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
+	 * Update the specified product
+	 * @param  ProductRequest $request
+	 * @param  Product        $product
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		//
+	public function update(EditProductRequest $request, Product $product){
+		
+		$input = $request->except('image');
+		$image = $request->file('image');
+
+		if($image != null){
+
+			// Picture name will be same as SKU
+			$name = $input['sku'];
+
+			// Extenstion of original picture
+			$extension = '.' . $image->getClientOriginalExtension();
+
+			// Set paths for full image and thumbnail
+			$imagePath = 'img/' . $name . $extension;
+			$thumbnailPath = 'img/thumbs/' . $name . $extension;
+
+			// Save original picture
+			\Image::make($image->getRealPath())->save(public_path($imagePath));
+
+			// Save resized thumbnail
+			\Image::make($image->getRealPath())->resize(300, null, function($constraint){
+				$constraint->aspectRatio();
+			})->save(public_path($thumbnailPath));
+
+			// Create Product model and save pictures
+			$product->fill($input);
+			$product->image = $imagePath;
+			$product->image_thumb = $thumbnailPath;
+			$product->save();
+
+			return redirect(route('AdminProductShow', $product));
+		}
+
+		$product->fill($input);
+		$product->save();
+
+		return redirect(route('AdminProductShow', $product));
 	}
 
 	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
+	 * Show the form for deleting for specific product
+	 * @param  Product $product 
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function delete(Product $product){
+
+		return view('admin.products.delete')->with(compact('product'));
+	}
+
+	/**
+	 * Deletes product
+	 * @param  Product $product
+	 * @return Response
+	 */
+	public function destroy(Product $product)
 	{
-		//
+		// Delete product
+		$product->delete();
+
+		return redirect(route('AdminProductIndex'));
 	}
 
 }

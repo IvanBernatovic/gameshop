@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class ProductRequest extends Request {
+class EditProductRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -27,8 +27,8 @@ class ProductRequest extends Request {
 			'description' => 'required|min:10',
 			'image' => 'image|max:2048',
 			'price' => 'required|numeric',
-			'slug' => 'required|between:3,255|alpha_dash|unique:products,slug',
-			'sku' => 'required|between:3,255|alpha_dash|unique:products,sku',
+			'slug' => 'required|between:3,255|alpha_dash',
+			'sku' => 'required|between:3,255|alpha_dash',
 			'quantity' => 'required|integer',
 			'weight' => 'required|numeric',
 		];
