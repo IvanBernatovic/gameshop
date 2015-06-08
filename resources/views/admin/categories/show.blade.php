@@ -1,4 +1,4 @@
-@extends('admin.master', ['title' => 'Category'])
+@extends('admin.master', ['title' => 'Category - ' . $category->slug])
 
 @section('content')
 <div class="col-sm-12">
