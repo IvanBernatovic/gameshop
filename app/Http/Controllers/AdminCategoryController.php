@@ -16,8 +16,8 @@ class AdminCategoryController extends Controller {
 	 * @return View
 	 */
 	public function index(){
-		// Select all categories
-		$categories = Category::all();
+		// Select all categories with pagination, 15 categories per page
+		$categories = Category::paginate(15);
 
 		return view('admin.categories.index')->with(compact('categories'));
 	}
