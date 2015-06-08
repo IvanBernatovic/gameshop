@@ -12,3 +12,52 @@
 */
 
 Route::get('/', 'WelcomeController@index');
+
+Route::group(['prefix' => 'admin'], function()
+{
+	Route::get('/', 'AdminController@index');
+
+	/**
+	 * Category related routes
+	 */
+	Route::get('/categories', [
+		'as' => 'AdminCategoryIndex',
+		'uses' => 'AdminCategoryController@index'
+	]);
+
+	Route::get('/categories/create', [
+		'as' => 'AdminCategoryCreate',
+		'uses' => 'AdminCategoryController@create'
+	]);
+
+	Route::post('/categories', [
+		'as' => 'AdminCategoryStore',
+		'uses' => 'AdminCategoryController@store'
+	]);
+
+	Route::get('/categories/{category}', [
+		'as' => 'AdminCategoryShow',
+		'uses' => 'AdminCategoryController@show'
+	]);
+
+	Route::get('/categories/{category}/edit', [
+		'as' => 'AdminCategoryEdit',
+		'uses' => 'AdminCategoryController@edit'
+	]);
+
+	Route::patch('/categories/{category}', [
+		'as' => 'AdminCategoryUpdate',
+		'uses' => 'AdminCategoryController@update'
+	]);
+
+	Route::get('/categories/{category}/delete', [
+		'as' => 'AdminCategoryDelete',
+		'uses' => 'AdminCategoryController@delete'
+	]);
+
+	Route::delete('/categories/{category}', [
+		'as' => 'AdminCategoryDestroy',
+		'uses' => 'AdminCategoryController@destroy'
+	]);
+});
+

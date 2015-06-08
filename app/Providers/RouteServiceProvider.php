@@ -24,7 +24,8 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
-		//
+		// Add Category model for route model binding
+		$router->model('category', 'App\Models\Category');
 	}
 
 	/**
