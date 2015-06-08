@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Requests\CategoryRequest;
 use App\Http\Controllers\Controller;
+use Image;
 
 use App\Models\Category;
 

@@ -25,7 +25,9 @@ class CreateProductsTable extends Migration {
 			$table->integer('category_id')->unsigned()->nullable();
 			$table->text('description');
 			$table->decimal('price', 8, 2);
-			$table->string('image');
+			$table->string('image')->nullable()->default('img/product-no-image.jpg');
+			$table->string('image_thumb')->nullable()->default('img/product-no-image.jpg');
+			$table->string('slug', 500)->nullable()->default(NULL);
 
 			// Discounted price, NULL if there's no discount
 			$table->decimal('discounted_price', 8, 2)->nullable();

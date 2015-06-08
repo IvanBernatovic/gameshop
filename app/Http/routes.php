@@ -59,5 +59,23 @@ Route::group(['prefix' => 'admin'], function()
 		'as' => 'AdminCategoryDestroy',
 		'uses' => 'AdminCategoryController@destroy'
 	]);
+
+	/**
+	 * Product related routes
+	 */
+	Route::get('/products', [
+		'as' => 'AdminProductIndex',
+		'uses' => 'AdminProductController@index'
+	]);
+
+	Route::get('/products/create', [
+		'as' => 'AdminProductCreate',
+		'uses' => 'AdminProductController@create'
+	]);
+
+	Route::post('/products', [
+		'as' => 'AdminProductStore',
+		'uses' => 'AdminProductController@store'
+	]);
 });
 
