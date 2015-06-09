@@ -4,7 +4,7 @@
 gameshop.sublime-project
 gameshop.sublime-workspace
 public/img/*
-!public/img/thumb
-public/img/thumb/*
-!public/img/thumb/readme.md
+!public/img/thumbs/
+public/img/thumbs/*
+!public/img/thumbs/readme.md
 !public/img/no_product_img.jpg

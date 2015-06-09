@@ -1,0 +1,1 @@
+## This file is here just to force git to add public/img/thumb directory in repo
