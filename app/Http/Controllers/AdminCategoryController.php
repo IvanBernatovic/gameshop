@@ -2,7 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\EditCategoryRequest;
 use App\Http\Controllers\Controller;
+use Image;
 
 use App\Models\Category;
 
@@ -16,8 +18,8 @@ class AdminCategoryController extends Controller {
 	 * @return View
 	 */
 	public function index(){
-		// Select all categories
-		$categories = Category::all();
+		// Select all categories with pagination, 15 categories per page
+		$categories = Category::paginate(15);
 
 		return view('admin.categories.index')->with(compact('categories'));
 	}
@@ -88,7 +90,7 @@ class AdminCategoryController extends Controller {
 	 * @param  \App\Models\Category $category
 	 * @return View
 	 */
-	public function update(CategoryRequest $request, Category $category){
+	public function update(EditCategoryRequest $request, Category $category){
 
 		// Set and save validated attributes
 		$category->name = $request->input('name');
