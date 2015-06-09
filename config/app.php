@@ -151,6 +151,7 @@ return [
 		'Intervention\Image\ImageServiceProvider',
 		'Baum\Providers\BaumServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
+		'HieuLe\Active\ActiveServiceProvider',
 
 	],
 
@@ -202,6 +203,7 @@ return [
 		'Image' 	=> 'Intervention\Image\Facades\Image',
 		'Form'		=> 'Illuminate\Html\FormFacade',
 		'HTML'		=> 'Illuminate\Html\HtmlFacade',
+		'Active' 	=> 'HieuLe\Active\Facades\Active',
 
 	],
 
