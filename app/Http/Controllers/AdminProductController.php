@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
  */
 use App\Models\Product;
 use App\Models\Category;
+use File;
 
 use Illuminate\Http\Request;
 
@@ -195,7 +196,21 @@ class AdminProductController extends Controller {
 	 * @return Response
 	 */
 	public function destroy(Product $product)
-	{
+	{	
+		/**
+		 * If the image of the product is not default 'No image available' 
+		 * image delete image from public directory
+		 */
+		if(public_path($product->image) != public_path(self::DEFAULT_IMG)){
+
+			// Check if files exist
+			if(File::exists(public_path($product->image)) && File::exists(public_path($product->image_thumb))){
+
+				File::delete(public_path($product->image));
+				File::delete(public_path($product->image_thumb));
+			}
+		}
+
 		// Delete product
 		$product->delete();
 

@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\EditCategoryRequest;
 use App\Http\Controllers\Controller;
 use Image;
 
@@ -89,7 +90,7 @@ class AdminCategoryController extends Controller {
 	 * @param  \App\Models\Category $category
 	 * @return View
 	 */
-	public function update(CategoryRequest $request, Category $category){
+	public function update(EditCategoryRequest $request, Category $category){
 
 		// Set and save validated attributes
 		$category->name = $request->input('name');

@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CategoryRequest extends Request {
+class EditCategoryRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -11,7 +11,7 @@ class CategoryRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return true;
+		return false;
 	}
 
 	/**
@@ -24,7 +24,7 @@ class CategoryRequest extends Request {
 		return [
 			'name' => 'required|between:3,255',
 			'parent_id' => '',
-			'slug' => 'required|between:3,255|alpha_dash|unique:categories,slug'
+			'slug' => 'required|between:3,255|alpha_dash'
 		];
 	}
 
