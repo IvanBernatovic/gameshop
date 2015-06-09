@@ -26,5 +26,6 @@
 		</tbody>
 	</table>
 </div>
+{!! $categories->render() !!}
 
 @endsection

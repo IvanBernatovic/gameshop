@@ -24,7 +24,7 @@ class CategoryRequest extends Request {
 		return [
 			'name' => 'required|between:3,255',
 			'parent_id' => '',
-			'slug' => 'required|between:3,255|alpha_dash'
+			'slug' => 'required|between:3,255|alpha_dash|unique:categories,slug'
 		];
 	}
 

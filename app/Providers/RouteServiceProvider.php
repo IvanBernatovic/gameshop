@@ -26,6 +26,9 @@ class RouteServiceProvider extends ServiceProvider {
 
 		// Add Category model for route model binding
 		$router->model('category', 'App\Models\Category');
+
+		// Add Product model for route model binding
+		$router->model('product', 'App\Models\Product');
 	}
 
 	/**

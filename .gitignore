@@ -1,4 +1,10 @@
 /vendor
 /node_modules
-/resources/assets/sass/bootstrap
 .env
+gameshop.sublime-project
+gameshop.sublime-workspace
+public/img/*
+!public/img/thumbs/
+public/img/thumbs/*
+!public/img/thumbs/readme.md
+!public/img/no_product_img.jpg
