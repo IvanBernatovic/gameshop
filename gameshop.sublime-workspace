@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"h",
+				"height: 〔property〕"
+			],
+			[
 				"im",
 				"image_thumb"
 			],
@@ -232,19 +236,59 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/Requests/EditCategoryRequest.php",
+			"file": "resources/views/store/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 505,
+				"buffer_size": 108,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+			"file": "app/Http/Controllers/StoreController.php",
 			"settings":
 			{
-				"buffer_size": 169,
+				"buffer_size": 365,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Http/routes.php",
+			"settings":
+			{
+				"buffer_size": 2672,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/helper.php",
+			"settings":
+			{
+				"buffer_size": 346,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/store/master.blade.php",
+			"settings":
+			{
+				"buffer_size": 87,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/store/primary-master.blade.php",
+			"settings":
+			{
+				"buffer_size": 445,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/store/side-navigation.blade.php",
+			"settings":
+			{
+				"buffer_size": 102,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -255,20 +299,20 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 363.0,
-		"last_filter": "instal",
+		"height": 332.0,
+		"last_filter": "install",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
 			[
 				"instal",
 				"Package Control: Install Package"
 			],
 			[
 				"insta",
-				"Package Control: Install Package"
-			],
-			[
-				"install",
 				"Package Control: Install Package"
 			],
 			[
@@ -362,13 +406,35 @@
 		"/C/XAMPP/htdocs/gameshop/app",
 		"/C/XAMPP/htdocs/gameshop/app/Http",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers",
-		"/C/XAMPP/htdocs/gameshop/database"
+		"/C/XAMPP/htdocs/gameshop/database",
+		"/C/XAMPP/htdocs/gameshop/resources",
+		"/C/XAMPP/htdocs/gameshop/resources/views",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store"
 	],
 	"file_history":
 	[
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/XAMPP/htdocs/gameshop/composer.json",
+		"/C/XAMPP/htdocs/git/movieblog/composer.json",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/header.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/footer.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/side-navigation.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/alt-master.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/sidebar-navigation.blade.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/StoreController.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminController.php",
 		"/C/XAMPP/htdocs/gameshop/.gitignore",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminCategoryController.php",
+		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-keymap",
+		"/C/XAMPP/htdocs/gameshop/_ide_helper.php",
+		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/XAMPP/htdocs/gameshop/node_modules/gulp/node_modules/vinyl-fs/node_modules/glob-watcher/node_modules/gaze/node_modules/globule/node_modules/lodash/dist/lodash.compat.js",
+		"/C/XAMPP/htdocs/gameshop/vendor/symfony/dom-crawler/Form.php",
+		"/C/XAMPP/htdocs/gameshop/node_modules/laravel-elixir/node_modules/babelify/node_modules/babel-core/browser.js",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/Controller.php",
+		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/EditCategoryRequest.php",
 		"/C/XAMPP/htdocs/testL51/database/factories/ModelFactory.php",
 		"/C/XAMPP/htdocs/testL51/app/Jobs/Job.php",
 		"/C/XAMPP/htdocs/gameshop/bootstrap/app.php",
@@ -376,11 +442,9 @@
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/show.blade.php",
 		"/C/XAMPP/htdocs/gameshop/bootstrap/cache/.gitignore",
 		"/C/XAMPP/htdocs/gameshop/bootstrap/cache/compiled.php",
-		"/C/XAMPP/htdocs/gameshop/composer.json",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/sidebar.blade.php",
 		"/C/XAMPP/htdocs/gameshop/config/app.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/routes.php",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminCategoryController.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminProductController.php",
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/app.scss",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/edit.blade.php",
@@ -390,7 +454,6 @@
 		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_120143_create_products_table.php",
 		"/C/XAMPP/htdocs/gameshop/public/img/thumbs/readme.md",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/CategoryRequest.php",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/EditCategoryRequest.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/show.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/delete.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/create.blade.php",
@@ -407,8 +470,6 @@
 		"/C/XAMPP/htdocs/gameshop/resources/views/errors/list.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/delete.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/edit.blade.php",
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/SublimeCodeIntel.sublime-settings",
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/_bootstrap_admin.scss",
 		"/C/XAMPP/htdocs/gameshop/public/js/app.js",
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/bootstrap/assets/stylesheets/bootstrap/_breadcrumbs.scss",
@@ -421,7 +482,6 @@
 		"/C/XAMPP/htdocs/git/movieblog/resources/views/home.blade.php",
 		"/C/XAMPP/htdocs/gameshop/gulpfile.js",
 		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_114119_create_users_table.php",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminController.php",
 		"/C/XAMPP/htdocs/gameshop/app/Product.php",
 		"/C/XAMPP/htdocs/gameshop/Category.php",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
@@ -448,7 +508,6 @@
 		"/C/XAMPP/htdocs/git/movieblog/resources/assets/sass/app.scss",
 		"/C/XAMPP/htdocs/git/movieblog/database/migrations/2015_04_29_173206_create_articles_table.php",
 		"/C/XAMPP/htdocs/git/movieblog/app/Http/Controllers/Controller.php",
-		"/C/XAMPP/htdocs/git/movieblog/composer.json",
 		"/C/XAMPP/htdocs/git/movieblog/resources/views/navigation.blade.php",
 		"/C/XAMPP/htdocs/git/movieblog/app/Helpers/url_slug.php",
 		"/C/XAMPP/htdocs/git/movieblog/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php",
@@ -481,19 +540,7 @@
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
 		"/C/XAMPP/htdocs/movieblog/app/Http/Requests/CreateArticleRequest.php",
-		"/C/XAMPP/htdocs/movieblog/database/migrations/2014_10_12_000000_create_users_table.php",
-		"/C/XAMPP/htdocs/movieblog/app/Models/User.php",
-		"/C/XAMPP/htdocs/movieblog/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-		"/C/XAMPP/htdocs/movieblog/app/Http/Controllers/Controller.php",
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/DocBlockr/README.md",
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-mousemap",
-		"/C/XAMPP/htdocs/movieblog/database/migrations/2015_04_28_181336_create_articles_table.php",
-		"/C/XAMPP/htdocs/movieblog/app/Models/OldArticle.php",
-		"/C/XAMPP/htdocs/movieblog/app/Article.php",
-		"/C/XAMPP/htdocs/movieblog/resources/js/jquery.min.js",
-		"/C/XAMPP/htdocs/movieblog/config/app.php",
-		"/C/XAMPP/htdocs/blog/config/app.php",
-		"/C/XAMPP/htdocs/blog/app/Http/Kernel.php"
+		"/C/XAMPP/htdocs/movieblog/database/migrations/2014_10_12_000000_create_users_table.php"
 	],
 	"find":
 	{
@@ -576,24 +623,88 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/Requests/EditCategoryRequest.php",
+					"file": "resources/views/store/index.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 505,
+						"buffer_size": 108,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								261,
-								261
+								79,
+								79
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"open_with_edit": true,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Http/Controllers/StoreController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								365,
+								365
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Http/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2672,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								517,
+								517
+							],
+							[
+								566,
+								566
 							]
 						],
 						"settings":
@@ -602,40 +713,130 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": -0.0,
-						"translation.y": 0.0,
+						"translation.x": 0.0,
+						"translation.y": 114.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+					"buffer": 3,
+					"file": "app/helper.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 169,
+						"buffer_size": 346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								168,
-								168
+								328,
+								328
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"auto_complete": false,
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/views/store/master.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 87,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "resources/views/store/primary-master.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 445,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								394,
+								394
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "resources/views/store/side-navigation.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								102,
+								102
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -838,55 +1039,20 @@
 			"hide_conflict": false,
 			"restore_index":
 			{
-				"33":
+				"15":
 				{
 					"group": 0,
 					"index": 0
 				},
-				"35":
+				"16":
 				{
 					"group": 0,
 					"index": 1
 				},
-				"44":
-				{
-					"group": 0,
-					"index": 9
-				},
-				"45":
-				{
-					"group": 0,
-					"index": 5
-				},
-				"50":
-				{
-					"group": 0,
-					"index": 4
-				},
-				"59":
-				{
-					"group": 0,
-					"index": 6
-				},
-				"62":
-				{
-					"group": 0,
-					"index": 3
-				},
-				"63":
+				"38":
 				{
 					"group": 0,
 					"index": 2
-				},
-				"70":
-				{
-					"group": 0,
-					"index": 7
-				},
-				"71":
-				{
-					"group": 0,
-					"index": 8
 				}
 			},
 			"restore_layout":

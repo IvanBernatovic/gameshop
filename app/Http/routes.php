@@ -11,7 +11,17 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', 'StoreController@index');
+
+Route::get('/test', function(){
+	
+	$categories = App\Models\Category::all();
+	
+
+$tree = App\Models\Category::all()->toHierarchy();
+
+	return $tree;
+});
 
 Route::group(['prefix' => 'admin'], function()
 {
