@@ -6,9 +6,11 @@
 		<div class="panel-heading">
 			<h3 class="panel-title">
 				<ol class="breadcrumb">
+					@if($product->category)
 					@foreach($product->category->getAncestorsAndSelf() as $parent)
 					<li><a class ="a-bread" href="{{ route('AdminCategoryShow', $parent) }}">{{ $parent->name }}</a></li>
 					@endforeach
+					@endif
 					<span> --- {{ $product->name }}</span>
 				</ol>
 			</h3>
@@ -30,6 +32,9 @@
 
 					<dt>Price</dt>
 					<dd>${{ $product->price }}</dd>
+
+					<dt>Discounted price</dt>
+					<dd>${{ $product->discounted_price }}</dd>
 
 					<dt>Description</dt>
 					<dd>{{ $product->description }}</dd>

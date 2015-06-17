@@ -13,15 +13,15 @@
 
 Route::get('/', 'StoreController@index');
 
-Route::get('/test', function(){
-	
-	$categories = App\Models\Category::all();
-	
+Route::get('/products/{product}', [
+	'as' => 'StoreProductShow',
+	'uses' => 'StoreController@showProduct'
+]);
 
-$tree = App\Models\Category::all()->toHierarchy();
-
-	return $tree;
-});
+Route::get('/{category}', [
+	'as' => 'StoreCategoryShow',
+	'uses' => 'StoreController@showCategory'
+]);
 
 Route::group(['prefix' => 'admin'], function()
 {

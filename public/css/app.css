@@ -240,8 +240,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("../fonts/glyphicons-halflings-regular.eot");
+  src: url("../fonts/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -5800,7 +5800,7 @@ button.close {
  * Base structure
  */
 /* Move down content because we have a fixed navbar that is 50px tall */
-body {
+body.admin {
   padding-top: 50px; }
 
 /*
@@ -5875,6 +5875,31 @@ div.categories {
   padding: 7px;
   border: solid 1px grey; }
 
+body {
+  background-color: #F0F0F0; }
+
+body.admin {
+  background-color: white; }
+
+div.main {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.panel-brand {
+  border-color: lightgrey;
+  background-color: inherit; }
+  .panel-brand > .panel-heading {
+    color: white;
+    background-color: #FF7043;
+    border-color: #FF7043; }
+    .panel-brand > .panel-heading + .panel-collapse > .panel-body {
+      border-top-color: lightgrey; }
+    .panel-brand > .panel-heading .badge {
+      color: #FF7043;
+      background-color: white; }
+  .panel-brand > .panel-footer + .panel-collapse > .panel-body {
+    border-bottom-color: lightgrey; }
+
 .dropdown-submenu {
   position: relative; }
 
@@ -5911,5 +5936,87 @@ div.categories {
   left: -100%;
   margin-left: 10px;
   border-radius: 6px 0 6px 6px; }
+
+.white-section, .navigation, .product {
+  border-radius: 3px;
+  background-color: white; }
+
+.products, .product-wrapper {
+  text-align: center; }
+
+.product-wrapper {
+  margin-bottom: 3px;
+  padding: 5px; }
+
+.product {
+  padding-bottom: 12px;
+  padding-top: 10px; }
+
+.product-title {
+  height: 1.9em;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: bold; }
+
+.listing-price {
+  font-weight: bold; }
+
+.old-price {
+  color: #F44336;
+  text-decoration: line-through; }
+
+div.product-img-wrapper {
+  width: 120px;
+  height: 170px;
+  overflow: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.add-cart {
+  color: white;
+  background-color: #FF7043;
+  border-color: white;
+  font-size: 0.9em; }
+  .add-cart:hover,
+  .add-cart:focus,
+  .add-cart.focus,
+  .add-cart:active,
+  .add-cart.active,
+  .open > .add-cart.dropdown-toggle {
+    color: white;
+    background-color: #ff4910;
+    border-color: #e0e0e0; }
+  .add-cart:active,
+  .add-cart.active,
+  .open > .add-cart.dropdown-toggle {
+    background-image: none; }
+  .add-cart.disabled,
+  .add-cart.disabled:hover,
+  .add-cart.disabled:focus,
+  .add-cart.disabled.focus,
+  .add-cart.disabled:active,
+  .add-cart.disabled.active,
+  .add-cart[disabled],
+  .add-cart[disabled]:hover,
+  .add-cart[disabled]:focus,
+  .add-cart[disabled].focus,
+  .add-cart[disabled]:active,
+  .add-cart[disabled].active,
+  fieldset[disabled] .add-cart,
+  fieldset[disabled] .add-cart:hover,
+  fieldset[disabled] .add-cart:focus,
+  fieldset[disabled] .add-cart.focus,
+  fieldset[disabled] .add-cart:active,
+  fieldset[disabled] .add-cart.active {
+    background-color: #FF7043;
+    border-color: white; }
+  .add-cart .badge {
+    color: #FF7043;
+    background-color: white; }
+
+a.root-parent, a.root-parent:active {
+  color: black;
+  font-weight: 700; }
 
 /*# sourceMappingURL=app.css.map */

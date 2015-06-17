@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"b",
+				"bd	border"
+			],
+			[
+				"m",
+				"m	margin"
+			],
+			[
+				"va",
+				"va	vertical-align: ${1:top};"
+			],
+			[
+				"fl",
+				"fl-n	float: none;"
+			],
+			[
+				"bac",
+				"background-size: 〔property〕"
+			],
+			[
+				"pos",
+				"pos-f	position: fixed;"
+			],
+			[
+				"pr",
+				"pos-r	position: relative;"
+			],
+			[
 				"h",
 				"height: 〔property〕"
 			],
@@ -46,10 +74,6 @@
 			[
 				"font-",
 				"font-size"
-			],
-			[
-				"b",
-				"block"
 			],
 			[
 				"max-",
@@ -239,23 +263,23 @@
 			"file": "resources/views/store/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 108,
+				"buffer_size": 57,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/StoreController.php",
+			"file": "resources/views/store/categories/show.blade.php",
 			"settings":
 			{
-				"buffer_size": 365,
-				"line_ending": "Unix"
+				"buffer_size": 519,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Http/routes.php",
+			"file": "app/Http/Controllers/AdminProductController.php",
 			"settings":
 			{
-				"buffer_size": 2672,
+				"buffer_size": 5355,
 				"line_ending": "Windows"
 			}
 		},
@@ -263,7 +287,47 @@
 			"file": "app/helper.php",
 			"settings":
 			{
-				"buffer_size": 346,
+				"buffer_size": 845,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/assets/sass/app.scss",
+			"settings":
+			{
+				"buffer_size": 1973,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/Controllers/StoreController.php",
+			"settings":
+			{
+				"buffer_size": 650,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "resources/views/store/header.blade.php",
+			"settings":
+			{
+				"buffer_size": 599,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/Http/routes.php",
+			"settings":
+			{
+				"buffer_size": 2736,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "resources/views/admin/categories/show.blade.php",
+			"settings":
+			{
+				"buffer_size": 1545,
 				"line_ending": "Windows"
 			}
 		},
@@ -271,7 +335,7 @@
 			"file": "resources/views/store/master.blade.php",
 			"settings":
 			{
-				"buffer_size": 87,
+				"buffer_size": 230,
 				"line_ending": "Windows"
 			}
 		},
@@ -279,7 +343,7 @@
 			"file": "resources/views/store/primary-master.blade.php",
 			"settings":
 			{
-				"buffer_size": 445,
+				"buffer_size": 725,
 				"line_ending": "Windows"
 			}
 		},
@@ -287,7 +351,7 @@
 			"file": "resources/views/store/side-navigation.blade.php",
 			"settings":
 			{
-				"buffer_size": 102,
+				"buffer_size": 331,
 				"line_ending": "Windows"
 			}
 		}
@@ -299,12 +363,24 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 332.0,
-		"last_filter": "install",
+		"height": 336.0,
+		"last_filter": "git add ",
 		"selected_items":
 		[
 			[
+				"git add ",
+				"Git: Add..."
+			],
+			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"in",
 				"Package Control: Install Package"
 			],
 			[
@@ -338,14 +414,6 @@
 			[
 				"li",
 				"Package Control: List Packages"
-			],
-			[
-				"in",
-				"Package Control: Install Package"
-			],
-			[
-				"pack",
-				"Package Control: Install Package"
 			],
 			[
 				"package",
@@ -403,27 +471,62 @@
 	"expanded_folders":
 	[
 		"/C/XAMPP/htdocs/gameshop",
-		"/C/XAMPP/htdocs/gameshop/app",
-		"/C/XAMPP/htdocs/gameshop/app/Http",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers",
-		"/C/XAMPP/htdocs/gameshop/database",
+		"/C/XAMPP/htdocs/gameshop/app/Providers",
 		"/C/XAMPP/htdocs/gameshop/resources",
 		"/C/XAMPP/htdocs/gameshop/resources/views",
-		"/C/XAMPP/htdocs/gameshop/resources/views/store"
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/categories",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/helpers",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/products"
 	],
 	"file_history":
 	[
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/index.blade.php",
+		"/C/XAMPP/htdocs/gameshop/app/Providers/RouteServiceProvider.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/delete.blade.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminCategoryController.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/show.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/edit.blade.php",
+		"/C/XAMPP/htdocs/gameshop/app/Models/Product.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/products/list.blade.php",
+		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/bootstrap/assets/stylesheets/_custom-variables.scss",
+		"/E/Program Files/Steam/SteamApps/common/Super Meat Boy/buttonmap.cfg",
+		"/E/Program Files/Steam/SteamApps/common/Super Meat Boy/buttonmap.cfg.bak",
 		"/C/XAMPP/htdocs/gameshop/composer.json",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/edit.blade.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/bindings.php",
+		"/C/XAMPP/htdocs/gameshop/app/Providers/ViewComposerServiceProvider.php",
+		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_120143_create_products_table.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/products/show.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/categories/show.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/sidebar.blade.php",
+		"/C/XAMPP/htdocs/gameshop/config/app.php",
+		"/C/XAMPP/htdocs/gameshop/app/Providers/ModelEventsServiceProvider.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/helpers/listing-price.blade.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/EditCategoryRequest.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/CategoryRequest.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/index.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/_bootstrap_admin.scss",
+		"/C/XAMPP/htdocs/gameshop/app/helper.php",
+		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/app.scss",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/master.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/footer.blade.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/primary-master.blade.php",
+		"/C/XAMPP/php/php.ini",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/side-navigation.blade.php",
+		"/C/XAMPP/htdocs/gameshop/public/js/app.js",
 		"/C/XAMPP/htdocs/git/movieblog/composer.json",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/header.blade.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/store/footer.blade.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/store/side-navigation.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/alt-master.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/sidebar-navigation.blade.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/StoreController.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminController.php",
 		"/C/XAMPP/htdocs/gameshop/.gitignore",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminCategoryController.php",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/Default (Windows).sublime-keymap",
 		"/C/XAMPP/htdocs/gameshop/_ide_helper.php",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
@@ -433,8 +536,6 @@
 		"/C/XAMPP/htdocs/gameshop/vendor/symfony/dom-crawler/Form.php",
 		"/C/XAMPP/htdocs/gameshop/node_modules/laravel-elixir/node_modules/babelify/node_modules/babel-core/browser.js",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/Controller.php",
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/EditCategoryRequest.php",
 		"/C/XAMPP/htdocs/testL51/database/factories/ModelFactory.php",
 		"/C/XAMPP/htdocs/testL51/app/Jobs/Job.php",
 		"/C/XAMPP/htdocs/gameshop/bootstrap/app.php",
@@ -442,40 +543,23 @@
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/show.blade.php",
 		"/C/XAMPP/htdocs/gameshop/bootstrap/cache/.gitignore",
 		"/C/XAMPP/htdocs/gameshop/bootstrap/cache/compiled.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/sidebar.blade.php",
-		"/C/XAMPP/htdocs/gameshop/config/app.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/routes.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminProductController.php",
-		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/app.scss",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/edit.blade.php",
-		"/C/XAMPP/htdocs/gameshop/app/Models/Product.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/ProductRequest.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/EditProductRequest.php",
-		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_120143_create_products_table.php",
 		"/C/XAMPP/htdocs/gameshop/public/img/thumbs/readme.md",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/CategoryRequest.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/show.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/delete.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/create.blade.php",
-		"/C/XAMPP/htdocs/gameshop/app/Providers/RouteServiceProvider.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/index.blade.php",
 		"/C/XAMPP/htdocs/gameshop/gameshop.sublime-project",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/Xdebug Client/Xdebug.sublime-settings",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Xdebug.sublime-settings",
 		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_114110_create_categories_table.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/index.blade.php",
 		"/C/XAMPP/htdocs/blog/resources/views/articles/create.blade.php",
 		"/C/XAMPP/htdocs/gameshop/app/Models/Category.php",
-		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/bootstrap/assets/stylesheets/_custom-variables.scss",
 		"/C/XAMPP/htdocs/gameshop/resources/views/errors/list.blade.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/delete.blade.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/edit.blade.php",
-		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/_bootstrap_admin.scss",
-		"/C/XAMPP/htdocs/gameshop/public/js/app.js",
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/bootstrap/assets/stylesheets/bootstrap/_breadcrumbs.scss",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories/create.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/_admin_markup.scss",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/master.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/welcome.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/navigation.blade.php",
 		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_142238_create_users_table.php",
@@ -528,23 +612,11 @@
 		"/C/XAMPP/htdocs/git/movieblog/.env",
 		"/C/XAMPP/htdocs/git/movieblog/.env - Copy.example",
 		"/C/XAMPP/htdocs/movieblog/resources/views/tinymce.blade.php",
-		"/C/XAMPP/htdocs/movieblog/database/migrations/2015_04_29_173206_create_articles_table.php",
-		"/E/Ivan/Projekti/Web-design/tinymce/js/tinymce/plugins/importcss/plugin.min.js",
-		"/C/XAMPP/htdocs/movieblog/gulpfile.js",
-		"/C/XAMPP/htdocs/movieblog/app/Http/Controllers/ArticlesController.php",
-		"/C/XAMPP/htdocs/movieblog/resources/views/navigation.blade.php",
-		"/C/XAMPP/htdocs/movieblog/resources/assets/sass/bootstrap/assets/stylesheets/_bootstrap.scss",
-		"/C/Users/Ivan/Desktop/Movieblog/crop.html",
-		"/C/XAMPP/htdocs/movieblog/vendor/bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss",
-		"/C/XAMPP/htdocs/movieblog/app/Models/Article.php",
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/Emmet/Emmet.sublime-settings",
-		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Emmet.sublime-settings",
-		"/C/XAMPP/htdocs/movieblog/app/Http/Requests/CreateArticleRequest.php",
-		"/C/XAMPP/htdocs/movieblog/database/migrations/2014_10_12_000000_create_users_table.php"
+		"/C/XAMPP/htdocs/movieblog/database/migrations/2015_04_29_173206_create_articles_table.php"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 53.0
 	},
 	"find_in_files":
 	{
@@ -560,6 +632,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"path",
+			"search",
+			"white",
+			"cache",
 			"jakub",
 			"references",
 			"shift+alt",
@@ -623,7 +699,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -632,15 +708,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 108,
+						"buffer_size": 57,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								79,
-								79
+								44,
+								44
 							]
 						],
 						"settings":
@@ -654,70 +730,65 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/Http/Controllers/StoreController.php",
+					"file": "resources/views/store/categories/show.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 365,
+						"buffer_size": 519,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								365,
-								365
+								415,
+								415
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/Http/routes.php",
+					"file": "app/Http/Controllers/AdminProductController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2672,
+						"buffer_size": 5355,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								517,
-								517
-							],
-							[
-								566,
-								566
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 114.0,
+						"translation.y": 4070.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -726,24 +797,52 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 346,
+						"buffer_size": 845,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								328,
-								328
+								132,
+								132
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"open_with_edit": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "resources/assets/sass/app.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1973,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								202
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Seti_UI/Langs/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -753,58 +852,29 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "resources/views/store/master.blade.php",
+					"buffer": 5,
+					"file": "app/Http/Controllers/StoreController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 87,
+						"buffer_size": 650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								55,
-								55
+								532,
+								532
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "resources/views/store/primary-master.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 445,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								394,
-								394
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 69.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
@@ -812,19 +882,19 @@
 				},
 				{
 					"buffer": 6,
-					"file": "resources/views/store/side-navigation.blade.php",
+					"file": "resources/views/store/header.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 102,
+						"buffer_size": 599,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								102,
-								102
+								318,
+								318
 							]
 						],
 						"settings":
@@ -833,10 +903,158 @@
 							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/Http/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2736,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								547,
+								547
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "resources/views/admin/categories/show.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1545,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								374,
+								374
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "resources/views/store/master.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 230,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "resources/views/store/primary-master.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 725,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								320,
+								344
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "resources/views/store/side-navigation.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 331,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								146,
+								146
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -844,7 +1062,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -889,7 +1107,7 @@
 	"project": "gameshop.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -899,8 +1117,52 @@
 		"selected_items":
 		[
 			[
+				"master.b",
+				"resources\\views\\store\\master.blade.php"
+			],
+			[
+				"index.blade",
+				"resources\\views\\store\\index.blade.php"
+			],
+			[
+				"storec",
+				"app\\Http\\Controllers\\StoreController.php"
+			],
+			[
+				"routeser",
+				"app\\Providers\\RouteServiceProvider.php"
+			],
+			[
+				"admincate",
+				"app\\Http\\Controllers\\AdminCategoryController.php"
+			],
+			[
 				"routes",
 				"app\\Http\\routes.php"
+			],
+			[
+				"helper",
+				"app\\helper.php"
+			],
+			[
+				"side-",
+				"resources\\views\\store\\side-navigation.blade.php"
+			],
+			[
+				"side",
+				"resources\\views\\admin\\sidebar.blade.php"
+			],
+			[
+				"header",
+				"resources\\views\\store\\header.blade.php"
+			],
+			[
+				"adminprodu",
+				"app\\Http\\Controllers\\AdminProductController.php"
+			],
+			[
+				"product",
+				"app\\Models\\Product.php"
 			],
 			[
 				"categ",
@@ -1083,7 +1345,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 430.0,
+	"side_bar_width": 285.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

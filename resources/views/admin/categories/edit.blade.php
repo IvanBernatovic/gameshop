@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-sm-8">
 	<div class="form">
-		{!! Form::model($category, ['method' => 'PATCH', 'url'=> route('AdminCategoryUpdate', $category->id)]) !!}
+		{!! Form::model($category, ['method' => 'PATCH', 'url'=> route('AdminCategoryUpdate', $category->slug)]) !!}
 		<div class="form-group">
 			{!! Form::label('name', 'Name:') !!}
 			{!! Form::text('name', null, ['class' => 'form-control']) !!}

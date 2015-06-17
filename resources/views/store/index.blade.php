@@ -2,6 +2,6 @@
 
 @section('main')
 
-<p>indexx</p>
+
 
 @endsection

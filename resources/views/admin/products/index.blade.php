@@ -26,7 +26,7 @@
 				<td>{{ $product->slug }}</td>
 				<td>${{ $product->price }}</td>
 				<td>{{ $product->quantity }}</td>
-				<td>{{ $product->category->slug }}</td>
+				<td>@if($product->category) {{ $product->category->slug }} @endif</td>
 			</tr>
 			@endforeach
 		</tbody>

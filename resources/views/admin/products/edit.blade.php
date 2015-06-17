@@ -25,6 +25,10 @@
 			{!! Form::text('price', null, ['class' => 'form-control']) !!}
 		</div>
 		<div class="form-group">
+			{!! Form::label('discounted_price', 'Discounted price ($):') !!}
+			{!! Form::text('discounted_price', null, ['class' => 'form-control']) !!}
+		</div>
+		<div class="form-group">
 			{!! Form::label('slug', 'Slug:') !!}
 			{!! Form::text('slug', null, ['class' => 'form-control']) !!}
 		</div>

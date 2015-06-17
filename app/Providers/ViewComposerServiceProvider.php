@@ -13,9 +13,7 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('store.side-navigation', function($view){
-            $view->with('categories', \App\Models\Category::where('id', '<>', 1)->get()->toHierarchy());
-        });
+        $this->composeSidebarNavigation();
     }
 
     /**
@@ -26,5 +24,15 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    /**
+     * Send categories variable to side.navigation partial
+     * @return void
+     */
+    private function composeSidebarNavigation(){
+        view()->composer('store.side-navigation', function($view){
+            $view->with('categories', \App\Models\Category::all()->toHierarchy());
+        });
     }
 }

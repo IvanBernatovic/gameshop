@@ -181,7 +181,7 @@ class AdminProductController extends Controller {
 	}
 
 	/**
-	 * Show the form for deleting for specific product
+	 * Show the form for deleting specific product
 	 * @param  Product $product 
 	 * @return Response
 	 */

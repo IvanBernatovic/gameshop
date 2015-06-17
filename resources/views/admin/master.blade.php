@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
+<body class="admin">
 	@include('admin.navigation')
 	<div class="container-fluid">
 		<div class="row">

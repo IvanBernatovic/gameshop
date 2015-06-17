@@ -1,0 +1,1 @@
+<h5 class="listing-price">${{ $product->price }}</h5 class="listing-price">
