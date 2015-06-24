@@ -31,8 +31,8 @@ class AdminCategoryController extends Controller {
 	public function create(){
 
 		$categories = Category::lists('slug', 'id');
-
-		$categories[null] = 'No parent';
+		$categories[''] = 'No parent (root)';
+		
 
 		return view('admin.categories.create')->with(compact('categories'));
 	}
@@ -50,8 +50,9 @@ class AdminCategoryController extends Controller {
 
 		// If parent id is set find wanted category and make it parent of new category
 		$parentId = $request->input('parent_id');
-		if(isset($parentId))
-		{
+		
+		if($parentId != "") {
+			
 			$parentCategory = Category::findOrFail($parentId);
 			$newCategory->makeChildOf($parentCategory);
 		}
@@ -80,6 +81,7 @@ class AdminCategoryController extends Controller {
 		 * for choosing parent category
 		 */
 		$categories = Category::where('id', '<>', $category->id)->lists('slug', 'id');
+		$categories[''] = 'No parent (root)';
 
 		return view('admin.categories.edit')->with(compact('category', 'categories'));
 	}
@@ -96,14 +98,19 @@ class AdminCategoryController extends Controller {
 		$category->name = $request->input('name');
 		$category->slug = $request->input('slug');
 		$category->save();
-
+		
 		/**
 		 * If parent is set and if parent_id and category->id are not equal,
 		 * set parent category
 		 */
 		$parentId = $request->input('parent_id');
-		if(isset($parentId) && $parentId != $category->id)
+
+		if(empty(trim($parentId)))
 		{
+
+			$category->makeRoot();
+		} else {
+			
 			$parentCategory = Category::findOrFail($parentId);
 			$category->makeChildOf($parentCategory);
 		}

@@ -10,9 +10,9 @@
 		</div>
 		<div class="panel-body">
 			<div class="alert alert-danger" role="alert">Are you sure you want to delete this product?</div>
-			{!! Form::model($product, ['method' => 'DELETE', 'url' => route('AdminProductDestroy', $product)]) !!}
+			{!! Form::model($product, ['method' => 'DELETE', 'url' => route('AdminProductDestroy', $product->slug)]) !!}
 			{!! Form::submit('Yes, delete product', ['class' => 'btn btn-danger']) !!}
-			<a class="btn btn-default" href="{{ route('AdminProductShow', $product) }}" role="button">No, go back</a>
+			<a class="btn btn-default" href="{{ route('AdminProductShow', $product->slug) }}" role="button">No, go back</a>
 			{!! Form::close() !!}
 
 		</div>

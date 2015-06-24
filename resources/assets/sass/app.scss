@@ -3,3 +3,112 @@
 
 @import 'bootstrap_admin.scss';
 @import 'admin_markup.scss';
+
+$brand-orange: #FF7043;
+
+body{
+	background-color: #F0F0F0;
+}
+
+body.admin{
+	background-color: white;
+}
+
+div.main{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.panel-brand{
+	@include panel-variant(lightgrey, white, $brand-orange, $brand-orange);
+	background-color: inherit;
+}
+
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+.dropdown-submenu:hover>.dropdown-menu{display:block;}
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu .pull-left{float:none;} .dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+.white-section{
+	border-radius: 3px;
+	background-color: white;
+}
+
+.navigation{
+	@extend .white-section;
+}
+
+.products, .product-wrapper{
+	text-align: center;
+}
+
+.product-wrapper{
+	margin-bottom: 3px;
+	padding: 5px;
+}
+
+.product {
+	@extend .white-section;
+	padding-bottom: 12px;
+	padding-top: 10px;
+}
+
+a.product-link, a.product-link:hover, a.product-link:active {
+	color: inherit;
+}
+
+.product-listing-title{
+	height: 1.9em;
+	margin-left: 5px;
+	margin-right: 5px;
+	font-weight: bold;
+}
+
+.listing-price{
+	font-weight: bold;
+}
+
+.old-price{
+	color: #F44336;
+	text-decoration: line-through;
+}
+
+div.product-img-wrapper{
+	width: 120px;
+	height: 170px;
+	overflow: auto;
+	@include center-block();
+} 
+
+.add-cart{
+	@include button-variant(white, $brand-orange, white);
+	font-size: 0.9em;
+}
+
+.add-cart-big{
+	@include button-variant(white, $brand-orange, white);
+	font-size: 1.1em;
+}
+
+a.root-parent, a.root-parent:active{
+	color: black;
+	font-weight: 700;
+}
+
+.product-section{
+	background: white;
+}
+
+.product-title{
+	font-weight: bold;
+}
+
+div.product-img-wrapper-big{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	@include center-block();
+}

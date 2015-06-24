@@ -6,17 +6,19 @@
 		<div class="panel-heading">
 			<h3 class="panel-title">
 				<ol class="breadcrumb">
+					@if($product->category)
 					@foreach($product->category->getAncestorsAndSelf() as $parent)
 					<li><a class ="a-bread" href="{{ route('AdminCategoryShow', $parent) }}">{{ $parent->name }}</a></li>
 					@endforeach
+					@endif
 					<span> --- {{ $product->name }}</span>
 				</ol>
 			</h3>
 		</div>
 		<div class="panel-body">
 			<div class="buttons">
-				<a class="btn btn-default" href="{{ route('AdminProductEdit', $product) }}" role="button">Edit product</a>
-				<a class="btn btn-default" href="{{ route('AdminProductDelete', $product) }}" role="button">Delete product</a>
+				<a class="btn btn-default" href="{{ route('AdminProductEdit', $product->slug) }}" role="button">Edit product</a>
+				<a class="btn btn-default" href="{{ route('AdminProductDelete', $product->slug) }}" role="button">Delete product</a>
 			</div>
 			
 			<div class="col-sm-6 product-info">
@@ -30,6 +32,9 @@
 
 					<dt>Price</dt>
 					<dd>${{ $product->price }}</dd>
+
+					<dt>Discounted price</dt>
+					<dd>${{ $product->discounted_price }}</dd>
 
 					<dt>Description</dt>
 					<dd>{{ $product->description }}</dd>
@@ -48,6 +53,9 @@
 
 					<dt>Is active</dt>
 					<dd>{{ $product->active }}</dd>
+					
+					<dt>Is new</dt>
+					<dd>{{ $product->new }}</dd>
 				</dl>
 			</div>
 

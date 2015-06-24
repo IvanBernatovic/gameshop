@@ -14,9 +14,9 @@
 		</div>
 		<div class="panel-body">
 			<div class="alert alert-danger" role="alert">Are you sure you want to delete this category? Products in this category won't have category anymore.</div>
-			{!! Form::model($category, ['method' => 'DELETE', 'url' => route('AdminCategoryDestroy', $category->id)]) !!}
+			{!! Form::model($category, ['method' => 'DELETE', 'url' => route('AdminCategoryDestroy', $category->slug)]) !!}
 			{!! Form::submit('Yes, delete category', ['class' => 'btn btn-danger']) !!}
-			<a class="btn btn-default" href="{{ route('AdminCategoryShow', $category->id) }}" role="button">No, go back</a>
+			<a class="btn btn-default" href="{{ route('AdminCategoryShow', $category->slug) }}" role="button">No, go back</a>
 			{!! Form::close() !!}
 
 		</div>

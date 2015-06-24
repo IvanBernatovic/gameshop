@@ -19,14 +19,14 @@
 		</thead>
 		<tbody>
 			@foreach($products as $product)
-			<tr data-href="{{ route('AdminProductShow', $product->id) }}">
+			<tr data-href="{{ route('AdminProductShow', $product->slug) }}">
 				<td>{{ $product->id }}</td>
 				<td>{{ $product->name }}</td>
 				<td>{{ $product->sku }}</td>
 				<td>{{ $product->slug }}</td>
 				<td>${{ $product->price }}</td>
 				<td>{{ $product->quantity }}</td>
-				<td>{{ $product->category->slug }}</td>
+				<td>@if($product->category) {{ $product->category->slug }} @endif</td>
 			</tr>
 			@endforeach
 		</tbody>
