@@ -30,7 +30,7 @@ div.main{
 .dropdown-submenu:hover>.dropdown-menu{display:block;}
 .dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
 .dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
-.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+.dropdown-submenu .pull-left{float:none;} .dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
 
 .white-section{
 	border-radius: 3px;
@@ -56,7 +56,11 @@ div.main{
 	padding-top: 10px;
 }
 
-.product-title{
+a.product-link, a.product-link:hover, a.product-link:active {
+	color: inherit;
+}
+
+.product-listing-title{
 	height: 1.9em;
 	margin-left: 5px;
 	margin-right: 5px;
@@ -77,14 +81,34 @@ div.product-img-wrapper{
 	height: 170px;
 	overflow: auto;
 	@include center-block();
-}
+} 
 
 .add-cart{
 	@include button-variant(white, $brand-orange, white);
 	font-size: 0.9em;
 }
 
+.add-cart-big{
+	@include button-variant(white, $brand-orange, white);
+	font-size: 1.1em;
+}
+
 a.root-parent, a.root-parent:active{
 	color: black;
 	font-weight: 700;
+}
+
+.product-section{
+	background: white;
+}
+
+.product-title{
+	font-weight: bold;
+}
+
+div.product-img-wrapper-big{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	@include center-block();
 }

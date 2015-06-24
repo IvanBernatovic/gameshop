@@ -2,6 +2,6 @@
 
 @section('main')
 
-
+@include('store.products.new-products')
 
 @endsection

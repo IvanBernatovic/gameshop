@@ -45,6 +45,10 @@
 			{!! Form::checkbox('active', '1' ) !!}
 		</div>
 		<div class="form-group">
+			{!! Form::label('new', 'Is new:') !!}
+			{!! Form::checkbox('new', '1' ) !!}
+		</div>
+		<div class="form-group">
 			{!! Form::submit('Create product',  ['class' => 'btn btn-primary form-control']) !!}
 		</div>
 		{!! Form::close() !!}

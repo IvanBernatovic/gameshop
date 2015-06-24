@@ -21,7 +21,11 @@ class CreateProductsTable extends Migration {
 
 			// Active in store
 			$table->boolean('active')->default(false);
-			$table->string('name')->unique()->index();
+
+			// New label
+			$table->boolean('new')->default(false);
+
+			$table->string('name')->index();
 			$table->integer('category_id')->unsigned()->nullable();
 			$table->text('description');
 			$table->decimal('price', 8, 2);

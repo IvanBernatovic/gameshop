@@ -11,17 +11,7 @@
 |
 */
 
-Route::get('/', 'StoreController@index');
 
-Route::get('/products/{product}', [
-	'as' => 'StoreProductShow',
-	'uses' => 'StoreController@showProduct'
-]);
-
-Route::get('/{category}', [
-	'as' => 'StoreCategoryShow',
-	'uses' => 'StoreController@showCategory'
-]);
 
 Route::group(['prefix' => 'admin'], function()
 {
@@ -114,3 +104,47 @@ Route::group(['prefix' => 'admin'], function()
 	]);
 });
 
+Route::get('/register', [
+	'middleware' => 'guest',
+	'as' => 'StoreUserRegisterGet',
+	'uses' => 'UserController@getRegister'
+]);
+
+Route::post('/register', [
+	'middleware' => 'guest',
+	'as' => 'StoreUserRegisterPost',
+	'uses' => 'UserController@postRegister'
+]);
+
+Route::get('/login', [
+	'middleware' => 'guest',
+	'as' => 'StoreUserLoginGet',
+	'uses' => 'UserController@getLogin'
+]);
+
+Route::post('/login', [
+	'middleware' => 'guest',
+	'as' => 'StoreUserLoginPost',
+	'uses' => 'UserController@postLogin'
+]);
+
+Route::get('/logout', [
+	'middleware' => 'auth',
+	'as' => 'StoreUserLogout',
+	'uses' => 'UserController@logout'
+]);
+
+
+Route::get('/', 'StoreController@index');
+
+Route::get('/products/{product}', [
+	'middleware' => 'store.product',
+	'as' => 'StoreProductShow',
+	'uses' => 'StoreController@showProduct'
+]);
+
+Route::get('/{category}', [
+	'middleware' => 'store.category',
+	'as' => 'StoreCategoryShow',
+	'uses' => 'StoreController@showCategory'
+]);

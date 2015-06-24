@@ -3,6 +3,7 @@
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use App\Models\Category;
+use App\Models\Product;
 
 class RouteServiceProvider extends ServiceProvider {
 
@@ -26,28 +27,33 @@ class RouteServiceProvider extends ServiceProvider {
 		parent::boot($router);
 
 
-		// Add Category model for route model binding
-		
-
+		// Add Category model for route model binding, use slug as id
 		$router->bind('category', function($value)
 		{	
 
 			$category = Category::where('slug', $value)->first();
 
-			/**
-			 * Return category if exists and is leaf
-			 */
-			if(!is_null($category) && $category->isLeaf())
+			if($category == null)
 			{
-				return $category;
+				abort(404);
 			}
 
-			throw new \Exception("Error Processing Request", 1);
-			
+			return $category;
 		});
 
-		// Add Product model for route model binding
-		$router->model('product', 'App\Models\Product');
+		// Add Product model for route model binding, use slus as id
+		$router->bind('product', function($value)
+		{
+
+			$product = Product::where('slug', $value)->first();
+
+			if($product == null)
+			{
+				abort(404);
+			}
+
+			return $product;
+		});
 	}
 
 	/**

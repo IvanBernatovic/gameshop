@@ -13,19 +13,30 @@ class StoreController extends Controller
     public function index()
     {	
 
-    	$products = Product::all();
-    	return view('store.index')->with(compact('products'));
+    	return view('store.index');
     }
 
+    /**
+     * Show all products on category page
+     * @param  Category $category
+     * @return Response
+     */
     public function showCategory(Category $category)
     {
-    	$products = $category->products;
+
+    	$products = $category->products()->where('active', 1)->orderBy('created_at', 'DESC')->get();
+
     	return view('store.categories.show')->with(compact('products', 'category'));
     }
 
+    /**
+     * Show product with description and add to cart button
+     * @param  Product $product
+     * @return Response
+     */
     public function showProduct(Product $product)
     {
 
-    	return view('store.products.show');
+    	return view('store.products.show')->with(compact('product'));
     }
 }

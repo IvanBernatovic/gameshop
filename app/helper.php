@@ -2,10 +2,11 @@
 
 function renderNode($node, $rootParent = false) {
   if( $node->isLeaf() ) {
+    $route = route('StoreCategoryShow', $node->slug);
     if($rootParent){
-      return '<li><a class="root-parent" href="'. $node->slug.'">' . $node->name . '</a></li>';
+      return '<li><a class="root-parent" href="'. $route .'">' . $node->name . '</a></li>';
     } else {
-      return '<li><a href="'. $node->slug.'">' . $node->name . '</a></li>';
+      return '<li><a href="'. $route .'">' . $node->name . '</a></li>';
     }
     
   } else {

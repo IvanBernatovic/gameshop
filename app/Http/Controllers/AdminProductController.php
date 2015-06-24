@@ -145,6 +145,16 @@ class AdminProductController extends Controller {
 		$input = $request->except('image');
 		$image = $request->file('image');
 
+		if(!isset($input['active']))
+		{
+			$input['active'] = false;
+		}
+
+		if(!isset($input['new']))
+		{
+			$input['new'] = false;
+		}
+
 		if($image != null){
 
 			// Picture name will be same as SKU
@@ -171,13 +181,13 @@ class AdminProductController extends Controller {
 			$product->image_thumb = $thumbnailPath;
 			$product->save();
 
-			return redirect(route('AdminProductShow', $product));
+			return redirect(route('AdminProductShow', $product->slug));
 		}
 
 		$product->fill($input);
 		$product->save();
 
-		return redirect(route('AdminProductShow', $product));
+		return redirect(route('AdminProductShow', $product->slug));
 	}
 
 	/**

@@ -5,7 +5,7 @@
 	@include('store.side-navigation')
 </div>
 
-<div class="products col-sm-12 col-md-10 col-lg-10">
+<div class="col-sm-12 col-md-10 col-lg-10">
 	
 	@yield('main')
 

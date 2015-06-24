@@ -17,8 +17,8 @@
 		</div>
 		<div class="panel-body">
 			<div class="buttons">
-				<a class="btn btn-default" href="{{ route('AdminProductEdit', $product) }}" role="button">Edit product</a>
-				<a class="btn btn-default" href="{{ route('AdminProductDelete', $product) }}" role="button">Delete product</a>
+				<a class="btn btn-default" href="{{ route('AdminProductEdit', $product->slug) }}" role="button">Edit product</a>
+				<a class="btn btn-default" href="{{ route('AdminProductDelete', $product->slug) }}" role="button">Delete product</a>
 			</div>
 			
 			<div class="col-sm-6 product-info">
@@ -53,6 +53,9 @@
 
 					<dt>Is active</dt>
 					<dd>{{ $product->active }}</dd>
+					
+					<dt>Is new</dt>
+					<dd>{{ $product->new }}</dd>
 				</dl>
 			</div>
 
