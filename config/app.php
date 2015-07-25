@@ -153,6 +153,8 @@ return [
 		'Baum\Providers\BaumServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
 		'HieuLe\Active\ActiveServiceProvider',
+		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+
 
 	],
 
@@ -205,6 +207,7 @@ return [
 		'Form'		=> 'Illuminate\Html\FormFacade',
 		'HTML'		=> 'Illuminate\Html\HtmlFacade',
 		'Active' 	=> 'HieuLe\Active\Facades\Active',
+		'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart',
 
 	],
 

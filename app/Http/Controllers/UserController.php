@@ -11,9 +11,14 @@ use User;
 
 class UserController extends Controller
 {
+    /**
+     * Shows register form
+     * @return Reponse
+     */
 	public function getRegister()
     {
 
+        return view('store.user.register');
     }
 
     public function postRegister()
@@ -21,9 +26,14 @@ class UserController extends Controller
 
     }
 
+    /**
+     * Shows login form
+     * @return Response
+     */
     public function getLogin()
     {
 
+        return view('store.user.login');
     }
 
     public function postLogin()
