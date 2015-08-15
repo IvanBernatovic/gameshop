@@ -154,6 +154,8 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'HieuLe\Active\ActiveServiceProvider',
 		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+		'Webpatser\Countries\CountriesServiceProvider',
+		'AdrianMejias\States\StatesServiceProvider',
 
 
 	],
@@ -208,6 +210,8 @@ return [
 		'HTML'		=> 'Illuminate\Html\HtmlFacade',
 		'Active' 	=> 'HieuLe\Active\Facades\Active',
 		'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart',
+		'Countries' => 'Webpatser\Countries\CountriesFacade',
+		'States' 	=> 'AdrianMejias\States\StatesFacade',
 
 	],
 

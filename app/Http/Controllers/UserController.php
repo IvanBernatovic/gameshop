@@ -23,10 +23,10 @@ class UserController extends Controller
 
     public function postRegister()
     {
-
+        
     }
 
-    /**
+    /**b
      * Shows login form
      * @return Response
      */

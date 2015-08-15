@@ -15,6 +15,26 @@
 		{!! Form::label('password', 'Password') !!}
 		{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'null']) !!}
 	</div>
+	<div class="form-group">
+		{!! Form::label('repeat_password', 'Repeat passwory') !!}
+		{!! Form::password('repeat_password', ['class' => 'form-control', 'placeholder' => 'Repeat password', 'required' => 'null']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('country', 'Country') !!}
+		{!! Form::select('country', Countries::lists('name', 'id'), null, ['class' => 'form-control']) !!}
+	</div>
+	<div id="states" class="form-group hide">
+		{!! Form::label('state', 'State') !!}
+		{!! Form::select('state', States::lists('name', 'id'), null, ['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('city', 'City:') !!}
+		{!! Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'City', 'required' => 'null']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('ZIP', 'ZIP:') !!}
+		{!! Form::text('ZIP', null, ['class' => 'form-control', 'placeholder' => 'ZIP', 'required' => 'null']) !!}
+	</div>
 
 	{!! Form::submit('Register',  ['class' => 'btn-sign-in']) !!}
 {!! Form::close() !!}
