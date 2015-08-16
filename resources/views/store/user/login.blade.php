@@ -2,7 +2,11 @@
 
 @section('content')
 
-{!! Form::open(['method' => 'POST', 'url'=> route('StoreUserLoginPost'), 'class' => 'form-signin']) !!}
+@if(\Session::has('flag'))
+@include('user.loginMessage')
+@endif
+
+{!! Form::open(['method' => 'POST', 'url' => route('StoreUserLoginPost'), 'class' => 'form-signin']) !!}
 	<h2 class="form-signin-heading">Please sign in</h2>
 	{!! Form::label('email', 'Email address', ['class' => 'sr-only']) !!}
 	{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => "Email adress", 'required' => 'null', 'autofocus' => null]) !!}

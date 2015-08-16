@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Event;
 
-use User;
+use App\Http\Requests\User\RegistrationRequest;
+use App\Events\UserIsRegistered;
+
+use App\User;
+use Hash;
 
 class UserController extends Controller
 {
@@ -21,9 +26,30 @@ class UserController extends Controller
         return view('store.user.register');
     }
 
-    public function postRegister()
+    /**
+     * Creates new user in database and fire an event for
+     * sneding activation mail
+     * @param  RegistrationRequest $request
+     * @return Response
+     */
+    public function postRegister(RegistrationRequest $request)
     {
-        
+        $input = $request->except('repeat_password');
+
+        if($input['country'] != 840)
+        {
+            $input['state'] = null;
+        }
+
+        $input['code'] = str_random(30);
+        $input['password'] = Hash::make($request['password']);
+        //dd($input);
+        $user = User::create($input);
+
+        Event::fire(new UserIsRegistered($user));
+
+        return redirect(route('StoreUserLoginGet'))
+                ->with('flag', 'activationSent');
     }
 
     /**b
@@ -44,5 +70,26 @@ class UserController extends Controller
     public function logout()
     {
 
+    }
+
+    /**
+     * Activates user if has not activated his account yet
+     * @param  string $code
+     * @return Response
+     */
+    public function getActivation($code)
+    {
+        $user = User::where('activated', 0)->where('code', $code)->first();
+
+        if($user == null)
+        {
+            return redirect(route('StoreUserLoginGet'))
+                    ->with('flag', 'notActivated');
+        } else {
+            $user->activate()->save();
+
+            return redirect(route('StoreUserLoginGet'))
+                    ->with('flag', 'activated');
+        }
     }
 }

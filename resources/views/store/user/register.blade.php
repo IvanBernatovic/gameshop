@@ -4,11 +4,11 @@
 
 {!! Form::open(['method' => 'POST', 'url'=> route('StoreUserRegisterPost'), 'class' => 'register-form']) !!}
 	<div class="form-group">
-		{!! Form::label('name', 'Full name:') !!}
+		{!! Form::label('name', 'Full name') !!}
 		{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Full name', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('email', 'Email:') !!}
+		{!! Form::label('email', 'Email') !!}
 		{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Email', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
@@ -16,7 +16,7 @@
 		{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('repeat_password', 'Repeat passwory') !!}
+		{!! Form::label('repeat_password', 'Repeat password') !!}
 		{!! Form::password('repeat_password', ['class' => 'form-control', 'placeholder' => 'Repeat password', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
@@ -28,11 +28,15 @@
 		{!! Form::select('state', States::lists('name', 'id'), null, ['class' => 'form-control']) !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('city', 'City:') !!}
+		{!! Form::label('city', 'City') !!}
 		{!! Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'City', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('ZIP', 'ZIP:') !!}
+		{!! Form::label('address', 'Address (street and number)') !!}
+		{!! Form::text('address', null, ['class' => 'form-control', 'placeholder' => 'Address', 'required' => 'null']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('ZIP', 'ZIP (postal code)') !!}
 		{!! Form::text('ZIP', null, ['class' => 'form-control', 'placeholder' => 'ZIP', 'required' => 'null']) !!}
 	</div>
 
