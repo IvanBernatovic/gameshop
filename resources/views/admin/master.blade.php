@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-<body>
+<body class="admin">
 	@include('admin.navigation')
 	<div class="container-fluid">
 		<div class="row">
@@ -17,8 +17,8 @@
 		</div>
 	</div>
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

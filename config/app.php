@@ -144,6 +144,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+		'App\Providers\ViewComposerServiceProvider',
 
 		/*
 		 * Custom Service Providers...
@@ -152,6 +153,10 @@ return [
 		'Baum\Providers\BaumServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
 		'HieuLe\Active\ActiveServiceProvider',
+		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
+		'Webpatser\Countries\CountriesServiceProvider',
+		'AdrianMejias\States\StatesServiceProvider',
+
 
 	],
 
@@ -204,6 +209,9 @@ return [
 		'Form'		=> 'Illuminate\Html\FormFacade',
 		'HTML'		=> 'Illuminate\Html\HtmlFacade',
 		'Active' 	=> 'HieuLe\Active\Facades\Active',
+		'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart',
+		'Countries' => 'Webpatser\Countries\CountriesFacade',
+		'States' 	=> 'AdrianMejias\States\StatesFacade',
 
 	],
 

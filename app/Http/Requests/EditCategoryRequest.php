@@ -11,7 +11,7 @@ class EditCategoryRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -22,9 +22,9 @@ class EditCategoryRequest extends Request {
 	public function rules()
 	{
 		return [
-			'name' => 'required|between:3,255',
+			'name' => 'required|between:2,255',
 			'parent_id' => '',
-			'slug' => 'required|between:3,255|alpha_dash'
+			'slug' => 'required|between:2,255|alpha_dash'
 		];
 	}
 

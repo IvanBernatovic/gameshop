@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-sm-6">
 	<div class="form">
-		{!! Form::model($product, ['method' => 'PATCH', 'url'=> route('AdminProductUpdate', $product), 'files' => true]) !!}
+		{!! Form::model($product, ['method' => 'PATCH', 'url'=> route('AdminProductUpdate', $product->slug), 'files' => true]) !!}
 		<div class="form-group">
 			{!! Form::label('name', 'Name:') !!}
 			{!! Form::text('name', null, ['class' => 'form-control']) !!}
@@ -25,6 +25,10 @@
 			{!! Form::text('price', null, ['class' => 'form-control']) !!}
 		</div>
 		<div class="form-group">
+			{!! Form::label('discounted_price', 'Discounted price ($):') !!}
+			{!! Form::text('discounted_price', null, ['class' => 'form-control']) !!}
+		</div>
+		<div class="form-group">
 			{!! Form::label('slug', 'Slug:') !!}
 			{!! Form::text('slug', null, ['class' => 'form-control']) !!}
 		</div>
@@ -43,6 +47,10 @@
 		<div class="form-group">
 			{!! Form::label('active', 'Is active:') !!}
 			{!! Form::checkbox('active', '1' ) !!}
+		</div>
+		<div class="form-group">
+			{!! Form::label('new', 'Is new:') !!}
+			{!! Form::checkbox('new', '1' ) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::submit('Update product',  ['class' => 'btn btn-primary form-control']) !!}
