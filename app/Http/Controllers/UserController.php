@@ -43,7 +43,7 @@ class UserController extends Controller
 
         $input['code'] = str_random(30);
         $input['password'] = Hash::make($request['password']);
-        //dd($input);
+        
         $user = User::create($input);
 
         Event::fire(new UserIsRegistered($user));

@@ -2,8 +2,8 @@
 
 @section('content')
 
-@if(\Session::has('flag'))
-@include('user.loginMessage')
+@if(session('flag'))
+@include('store.user.loginMessage')
 @endif
 
 {!! Form::open(['method' => 'POST', 'url' => route('StoreUserLoginPost'), 'class' => 'form-signin']) !!}

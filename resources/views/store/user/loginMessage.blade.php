@@ -1,4 +1,4 @@
-@if($flag == 'activated')
+@if(session('flag') == 'activated')
 <div class="form-signin">
 	<div class="alert alert-success alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -6,7 +6,7 @@
 	</div>
 </div>
 
-@elseif($flag == 'notActivated')
+@elseif(session('flag') == 'notActivated')
 <div class="form-signin">
 	<div class="alert alert-danger alert-dismissible" role="alert">
 	  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>Activation link is already used or it doesn't exist.
