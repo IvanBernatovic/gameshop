@@ -2,11 +2,11 @@
 	<h3 class="panel-title">
 		<ol class="breadcrumb">
 			@foreach($category->getAncestorsAndSelf() as $parent)
-			<li><a class ="a-bread" 
+			<li><a class ="a-bread"
 				@if($parent->isLeaf()) href="{{ route('StoreCategoryShow', $parent->slug) }}"
 				@else href="#"
 				@endif >{{ $parent->name }}</a></li>
-				@endforeach
+			@endforeach
 		</ol>
 	</h3>
 </div>

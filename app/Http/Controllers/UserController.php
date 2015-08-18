@@ -8,7 +8,17 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Event;
 
+use Auth;
+
+/**
+ * Custom Requests
+ */
 use App\Http\Requests\User\RegistrationRequest;
+use App\Http\Requests\User\LoginRequest;
+
+/**
+ * Events
+ */
 use App\Events\UserIsRegistered;
 
 use App\User;
@@ -62,14 +72,34 @@ class UserController extends Controller
         return view('store.user.login');
     }
 
-    public function postLogin()
-    {
-
+    /**
+     * Proccessing user login request
+     * @param  LoginRequest $request
+     * @return Response
+     */
+    public function postLogin(LoginRequest $request)
+    {   
+        $remember = $request->input('remember') ? true : false;
+        
+        // If user is logging in with correct credentials and if it's activated
+        if(Auth::attempt(['email' => $request['email'], 'password' => $request['password'], 'activated' => 1], 
+            $remember ))
+        {
+            return redirect()->intended('/');
+        } else {
+            return redirect()->route('StoreUserLoginGet')->with('flag', 'wrongLogin');
+        }
     }
 
+    /**
+     * Logs out authenticated user
+     * @return Response
+     */
     public function logout()
     {
+        Auth::logout();
 
+        return redirect()->intended('/');
     }
 
     /**
