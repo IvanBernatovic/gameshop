@@ -15,6 +15,13 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		// $this->call('UserTableSeeder');
+		//Seed the countries
+		$this->call('CountriesSeeder');
+		$this->command->info('Seeded the countries!');
+
+		// Seed the states
+		$this->call('StatesSeeder');	
+		$this->command->info('Seeded the states!');
 	}
 
 }

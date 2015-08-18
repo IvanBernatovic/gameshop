@@ -31,7 +31,7 @@ class CreateProductsTable extends Migration {
 			$table->decimal('price', 8, 2);
 			$table->string('image')->nullable()->default('img/product-no-image.jpg');
 			$table->string('image_thumb')->nullable()->default('img/product-no-image.jpg');
-			$table->string('slug', 500)->unique();
+			$table->string('slug', 255)->unique();
 
 			// Discounted price, NULL if there's no discount
 			$table->decimal('discounted_price', 8, 2)->nullable();

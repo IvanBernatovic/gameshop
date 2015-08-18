@@ -134,6 +134,12 @@ Route::get('/logout', [
 	'uses' => 'UserController@logout'
 ]);
 
+Route::get('user/activate/{code}', [
+	'middleware' => 'guest',
+	'as' => 'UserActivationGet',
+	'uses' => 'UserController@getActivation'
+]);
+
 
 Route::get('/', 'StoreController@index');
 
