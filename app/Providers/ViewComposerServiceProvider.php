@@ -7,6 +7,9 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\Category;
 use App\Models\Product;
 
+use Auth;
+use Cart;
+
 class ViewComposerServiceProvider extends ServiceProvider
 {
     /**
@@ -18,6 +21,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         $this->composeSidebarNavigation();
         $this->composeNewProductsPanel();
+        $this->composeCartPanel();
     }
 
     /**
@@ -51,6 +55,21 @@ class ViewComposerServiceProvider extends ServiceProvider
                                             ->where('new', 1)
                                             ->orderBy('created_at', 'DESC')
                                             ->take(8)->get());
+        });
+    }
+
+    /**
+     * Sends user and cartCount variables to cart-panel view
+     * @return Response
+     */
+    private function composeCartPanel()
+    {
+        view()->composer('store.shopping.cart-panel', function($view){
+            $view->with([
+                'user' => $user = Auth::user(),
+                'cartCount' => Cart::count(),
+
+            ]);
         });
     }
 }

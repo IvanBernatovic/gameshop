@@ -104,6 +104,9 @@ Route::group(['prefix' => 'admin'], function()
 	]);
 });
 
+/**
+ * Registration, logging in and activation routes
+ */
 Route::get('/register', [
 	'middleware' => 'guest',
 	'as' => 'StoreUserRegisterGet',
@@ -143,6 +146,18 @@ Route::get('user/activate/{code}', [
 
 Route::get('/', 'StoreController@index');
 
+/**
+ * Add to cart routes
+ */
+Route::post('/products/add-to-cart', [
+	'as' => 'StoreAddToCart',
+	'uses' => 'Store\CartController@add'
+]);
+
+/**
+ * Showing products and categories
+ * IMPORTANT: Always have this routes on last lines
+ */
 Route::get('/products/{product}', [
 	'middleware' => 'store.product',
 	'as' => 'StoreProductShow',
