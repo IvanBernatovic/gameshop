@@ -165,3 +165,11 @@ div.product-img-wrapper-big{
 	@extend .col-sm-9, .panel, .panel-default;
 	font-size: 1.2em;
 }
+
+.cart-content {
+	@extend .panel-body, .white-section, .table, .table-bordered, .table-hover;
+}
+
+.total-price {
+	font-size: 1.2em;
+}

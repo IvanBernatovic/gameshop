@@ -147,11 +147,26 @@ Route::get('user/activate/{code}', [
 Route::get('/', 'StoreController@index');
 
 /**
- * Add to cart routes
+ * Cart routes
  */
-Route::post('/products/add-to-cart', [
+Route::post('/cart/add-to-cart', [
 	'as' => 'StoreAddToCart',
 	'uses' => 'Store\CartController@add'
+]);
+
+Route::get('/cart', [
+	'as' => 'StoreCart',
+	'uses' => 'Store\CartController@show'
+]);
+
+Route::post('/cart/remove-from-cart', [
+	'as' => 'StoreRemoveFromCart',
+	'uses' => 'Store\CartController@remove'
+]);
+
+Route::get('/cart/clear-cart', [
+	'as' => 'StoreClearCart',
+	'uses' => 'Store\CartController@clear'
 ]);
 
 /**
