@@ -11,5 +11,5 @@
 			</span>
 		</div>
 	</div>
-	<div class="col-sm-9" style="background-color: brown; height: 100px"></div>
+	@include('store.shopping.cart-panel')
 </header>
