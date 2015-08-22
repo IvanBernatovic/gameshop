@@ -170,6 +170,17 @@ Route::get('/cart/clear-cart', [
 ]);
 
 /**
+ * Checkout and order routes
+ */
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/cart/checkout', [
+		'as' => 'StoreCartCheckout',
+		'uses' => 'Store\CartController@checkout'
+	]);
+});
+
+
+/**
  * Showing products and categories
  * IMPORTANT: Always have this routes on last lines
  */

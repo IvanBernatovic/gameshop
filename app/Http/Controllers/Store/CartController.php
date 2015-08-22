@@ -55,10 +55,25 @@ class CartController extends Controller
     	return back();
     }
 
+    /**
+     * Clears current cart
+     * @return Response
+     */
     public function clear()
     {
     	Cart::destroy();
 
     	return back();
+    }
+
+    /**
+     * Shows view for confirming cart content and proceeding to order
+     * @return Response
+     */
+    public function checkout()
+    {
+        $cart = Cart::instance('main');
+
+        return view('store.shopping.checkout')->with(compact('cart'));
     }
 }
