@@ -4,13 +4,19 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"type": "project",
+	"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/IvanBernatovic/LaravelShoppingcart"
+        }
+    ],
 	"require": {
 		"laravel/framework": "5.1.*",
 		"intervention/image": "~2.2",
 		"baum/baum": "~1.1",
 		"illuminate/html": "5.0.0",
 		"hieu-le/active": "2.2.0",
-		"gloudemans/shoppingcart": "~1.3",
+		"gloudemans/shoppingcart": "dev-gameshop",
 		"webpatser/laravel-countries": "dev-master",
 		"adrianmejias/laravel-states": "dev-master"
 	},

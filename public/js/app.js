@@ -26,7 +26,7 @@ $(document).ready(function(){
 	});
 
 	// For showing States options if United States are selected as Country
-	$('select#country').on('change', function(event) {
+	$('select#country_id').on('change', function(event) {
 		if($(this).val() == 840) {
 			$('div#states').removeClass('hide');
 		} else {

@@ -175,7 +175,13 @@ Route::get('/cart/clear-cart', [
 Route::group(['middleware' => 'auth'], function(){
 	Route::get('/cart/checkout', [
 		'as' => 'StoreCartCheckout',
+		'middleware' => 'checkout',
 		'uses' => 'Store\CartController@checkout'
+	]);
+
+	Route::get('/cart/order', [
+		'as' => 'StoreOrder',
+		'uses' => 'Store\OrderController@show'
 	]);
 });
 

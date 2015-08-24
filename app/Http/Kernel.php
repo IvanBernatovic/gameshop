@@ -29,6 +29,7 @@ class Kernel extends HttpKernel {
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
 		'store.category' => 'App\Http\Middleware\AfterStoreCategory',
 		'store.product' => 'App\Http\Middleware\AfterStoreProduct',
+		'checkout' => 'App\Http\Middleware\CheckoutMiddleware',
 	];
 
 }
