@@ -26,7 +26,7 @@
 			<dd>{{ $address->name }}</dd>
 			<dd>{{ $address->street }}</dd>
 			<dd>{{ $address->ZIP . ' ' . $address->city }}</dd>
-			<dd>{{ $address->country->name }} {{ $address->state_id ? ', ' . $address->state->name : '' }}</dd>
+			<dd>{{ $address->country->name }}{{ $address->state_id ? ', ' . $address->state->name : '' }}</dd>
 		</dl>
 	</div>
 </div>
@@ -34,7 +34,8 @@
 <div class="panel panel-brand">
 	<div class="panel-heading"><h3 class="panel-title text-center">Confirmation and payment method</h3></div>
 	<div class="panel-body white-section">
-		<form action="" method="POST" class="">
+		<form action="{{ route('StoreOrderPay') }}" method="POST">
+			{!! csrf_field() !!}
 			<script
 				src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 				data-key="pk_test_Z1xHfrj7X6ngwa8MhtnB97TD"
@@ -46,7 +47,11 @@
 			</script>
 		</form>
 		<div style="margin-top: 1em;">
-			<a class="btn btn-primary btn-md" href="#" role="button">Cash on delivery</a>
+		<form id="confirmOrder" action="{{ route('StoreOrderPay')}}" method="POST">
+			{!! csrf_field() !!}
+			<input type="hidden" name="cashOnDelivery" value="cashOnDelivery">
+		</form>
+			<button class="btn btn-primary btn-md" type="submit" form="confirmOrder">Cash on delivery</button>
 		</div>
 	</div>
 </div>

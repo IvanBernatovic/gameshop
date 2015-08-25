@@ -17,6 +17,8 @@ class CreateOrderProductTable extends Migration
 
             $table->integer('order_id')->unsigned();
             $table->integer('product_id')->unsigned();
+            $table->integer('quantity')->unsigned();
+            $table->float('price', 8,2);
 
             $table->timestamps();
         });

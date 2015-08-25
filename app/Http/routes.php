@@ -204,6 +204,17 @@ Route::group(['middleware' => 'auth'], function(){
 	]);
 });
 
+Route::get('/test', function() {
+	$cartProducts = \Cart::associate('Product', 'App\Models')->content();
+	$products = new Illuminate\Support\Collection;
+	foreach($cartProducts as $item)
+	{
+		$products->push(['product' => \App\Models\Product::find($item->id), 
+			'quantity' => $item->qty]);
+	}
+
+	dd($products);
+});
 
 /**
  * Showing products and categories
