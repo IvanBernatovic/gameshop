@@ -181,7 +181,26 @@ Route::group(['middleware' => 'auth'], function(){
 
 	Route::get('/cart/order', [
 		'as' => 'StoreOrder',
+		'middleware' => 'checkout',
 		'uses' => 'Store\OrderController@show'
+	]);
+
+	Route::post('/cart/order', [
+		'as' => 'StoreOrderShipping',
+		'middleware' => 'checkout',
+		'uses' => 'Store\OrderController@proccessShipping'
+	]);
+
+	Route::get('/cart/order/confirm', [
+		'as' => 'StoreOrderConfirm',
+		'middleware' => 'checkout',
+		'uses' => 'Store\OrderController@confirm'
+	]);
+
+	Route::post('/cart/order/pay', [
+		'as' => 'StoreOrderPay',
+		'middleware' => 'checkout',
+		'uses' => 'Store\OrderController@pay'
 	]);
 });
 

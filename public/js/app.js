@@ -33,4 +33,16 @@ $(document).ready(function(){
 			$('div#states').addClass('hide');
 		}
 	});
+
+	// For showing new inputs if user want change shipping address
+	$('input:radio[name="shippingAddress"]').change(
+		function(){
+			if ($(this).is(':checked') && $(this).val() == 'otherAddress') {
+            	$('div#otherAddress').removeClass('hide');
+            	$('html, body').animate({ scrollTop: $('div#otherAddress').offset().top }, 'slow');
+            } else {
+            	$('div#otherAddress').addClass('hide');
+            }
+        }
+    );
 });

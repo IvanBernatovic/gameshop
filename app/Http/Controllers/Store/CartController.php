@@ -38,9 +38,8 @@ class CartController extends Controller
 
     public function show()
     {
-    	$cart = Cart::instance('main');
-
-    	return view('store.shopping.cart')->with(compact('cart'));
+    	
+    	return view('store.shopping.cart');
     }
 
     /**
@@ -72,8 +71,7 @@ class CartController extends Controller
      */
     public function checkout()
     {
-        $cart = Cart::instance('main');
-
-        return view('store.shopping.checkout')->with(compact('cart'));
+        
+        return view('store.shopping.checkout');
     }
 }

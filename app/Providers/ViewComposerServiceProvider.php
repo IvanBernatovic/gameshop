@@ -22,6 +22,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $this->composeSidebarNavigation();
         $this->composeNewProductsPanel();
         $this->composeCartPanel();
+        $this->composeCartInstance();
     }
 
     /**
@@ -69,6 +70,24 @@ class ViewComposerServiceProvider extends ServiceProvider
                 'user' => $user = Auth::user(),
                 'cartCount' => Cart::count(),
 
+            ]);
+        });
+    }
+
+    /**
+     * Enable access to Cart main instance to several cart and order related views
+     * @return
+     */
+    private function composeCartInstance()
+    {
+        view()->composer([
+                'store.shopping.cart',
+                'store.shopping.checkout',
+                'store.shopping.confirm',
+                'store.shopping.order-shipping'
+            ], function($view){
+            $view->with([
+                'cart' => Cart::instance('main'),
             ]);
         });
     }
