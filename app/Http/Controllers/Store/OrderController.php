@@ -74,7 +74,7 @@ class OrderController extends Controller
 
     	if($request->session()->has('addressId'))
     	{
-    		$address = Address::find($request->session()->has('addressId'));
+    		$address = Address::find($request->session()->get('addressId'));
     		$request->session()->forget('addressId');
     	} else {
     		$address = $user->address;

@@ -41,7 +41,7 @@ class RouteServiceProvider extends ServiceProvider {
 			return $category;
 		});
 
-		// Add Product model for route model binding, use slus as id
+		// Add Product model for route model binding, use slug as id
 		$router->bind('product', function($value)
 		{
 
@@ -54,6 +54,9 @@ class RouteServiceProvider extends ServiceProvider {
 
 			return $product;
 		});
+
+		// Add Order model for route model binding
+		$router->model('order', 'App\Models\Order');
 	}
 
 	/**

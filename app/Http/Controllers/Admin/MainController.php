@@ -1,11 +1,11 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller {
+class MainController extends Controller {
 
 	public function index(){
 		return view('admin.master');
