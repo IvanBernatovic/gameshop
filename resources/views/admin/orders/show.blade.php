@@ -37,7 +37,9 @@
 			
 			<ul class="list-group">
 				@foreach($order->products as $productItem)
-				<li class="list-group-item">{{ $productItem->product->name }}, x{{ $productItem->quantity }}, ${{ $productItem->price * $productItem->quantity }} </li>
+				<a href="{{ route('AdminProductShow', $productItem->product->slug) }}" class="inherit">
+					<li class="list-group-item">{{ $productItem->product->name }}, x{{ $productItem->quantity }}, ${{ $productItem->price * $productItem->quantity }} </li>
+				</a>
 				@endforeach
 				@if( $order->full_price < 150 - 15)
 				<li class="list-group-item">Shipping (if order is under $150), $15</li>

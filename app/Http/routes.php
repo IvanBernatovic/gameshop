@@ -120,6 +120,11 @@ Route::group(['prefix' => 'admin'], function()
 		'as' => 'AdminOrderEdit',
 		'uses' => 'Admin\OrderController@edit'
 	]);
+
+	Route::patch('/orders/{order}', [
+		'as' => 'AdminOrderUpdate',
+		'uses' => 'Admin\OrderController@update'
+	]);
 });
 
 /**

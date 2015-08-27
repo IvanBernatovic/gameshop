@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class ConfirmOrderRequest extends Request
+class EditOrderRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class ConfirmOrderRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class ConfirmOrderRequest extends Request
     public function rules()
     {
         return [
-            //
+            'status_code_id' => 'required|integer|exists:status_codes,id|min:2',
         ];
     }
 }
