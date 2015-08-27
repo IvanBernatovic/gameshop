@@ -8,7 +8,7 @@
 		</div>
 		<div class="panel-body">
 			<div class="buttons">
-				<a class="btn btn-default" href="" role="button">Change order status</a>
+				<a class="btn btn-default" href="{{ route('AdminOrderEdit', $order) }}" role="button">Change order status</a>
 			</div>
 			<div class="category-info">
 				<h3>Order information</h3>
@@ -23,10 +23,10 @@
 					<dd>{{ $order->created_at->format('d.m.Y.  H:i:s e') }}</dd>
 
 					<dt>Adddress</dt>
-						<dd>{{ $order->address->name }}</dd>
-						<dd>{{ $order->address->street }}</dd>
-						<dd>{{ $order->address->ZIP . ' ' . $order->address->city }}</dd>
-						<dd>{{ $order->address->country->name }}{{ $order->address->state_id ? ', ' . $order->address->state->name : '' }}</dd>
+					<dd>{{ $order->address->name }}</dd>
+					<dd>{{ $order->address->street }}</dd>
+					<dd>{{ $order->address->ZIP . ' ' . $order->address->city }}</dd>
+					<dd>{{ $order->address->country->name }}{{ $order->address->state_id ? ', ' . $order->address->state->name : '' }}</dd>
 					<dt>Payment method</dt>
 					<dd>{{ $order->payment_method->name }}</dd>
 
@@ -43,7 +43,7 @@
 				<li class="list-group-item">Shipping (if order is under $150), $15</li>
 				@endif
 				<li class="list-group-item"><strong>Total: ${{ $order->full_price }}</strong></li>
-		</ul>
+			</ul>
 		</div>
 	</div>
 </div>

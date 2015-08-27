@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e17bef50ad07bbb849f70dc01857612",
+    "hash": "b5f26402d22bb59a0f70f7b35c983b4f",
     "packages": [
         {
             "name": "adrianmejias/laravel-states",
@@ -1154,6 +1154,55 @@
                 "php"
             ],
             "time": "2015-07-14 17:31:05"
+        },
+        {
+            "name": "orangehill/iseed",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orangehill/iseed.git",
+                "reference": "0886919f3f0f7513ec334af22beeddcb3f28b7e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orangehill/iseed/zipball/0886919f3f0f7513ec334af22beeddcb3f28b7e2",
+                "reference": "0886919f3f0f7513ec334af22beeddcb3f28b7e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/filesystem": "5.x",
+                "mockery/mockery": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Orangehill\\Iseed": "src/"
+                },
+                "classmap": [
+                    "src/Orangehill/Iseed/Exceptions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tihomir Opacic",
+                    "email": "tihomir.opacic@orangehilldev.com"
+                }
+            ],
+            "description": "Generate a new Laravel database seed file based on data from the existing database table.",
+            "keywords": [
+                "artisan",
+                "generators",
+                "laravel",
+                "seed"
+            ],
+            "time": "2015-03-19 09:48:32"
         },
         {
             "name": "psr/http-message",
@@ -3294,7 +3343,8 @@
     "stability-flags": {
         "gloudemans/shoppingcart": 20,
         "webpatser/laravel-countries": 20,
-        "adrianmejias/laravel-states": 20
+        "adrianmejias/laravel-states": 20,
+        "orangehill/iseed": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

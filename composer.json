@@ -19,7 +19,8 @@
 		"gloudemans/shoppingcart": "dev-gameshop",
 		"webpatser/laravel-countries": "dev-master",
 		"adrianmejias/laravel-states": "dev-master",
-		"stripe/stripe-php": "3.*"
+		"stripe/stripe-php": "3.*",
+		"orangehill/iseed": "dev-master"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

@@ -32,6 +32,6 @@ class OrderController extends Controller
 
     public function edit(Order $order)
     {
-    	return view('admin.orders.edit');
+    	return view('admin.orders.edit')->with(compact('order'));
     }
 }
