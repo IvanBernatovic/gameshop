@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Event;
 
 use Auth;
+use Hash;
 
 /**
  * Custom Requests
@@ -21,8 +22,11 @@ use App\Http\Requests\User\LoginRequest;
  */
 use App\Events\UserIsRegistered;
 
+/**
+ * Models
+ */
 use App\User;
-use Hash;
+use App\Models\Address;
 
 class UserController extends Controller
 {
@@ -46,13 +50,16 @@ class UserController extends Controller
     {
         $input = $request->except('repeat_password');
 
-        if($input['country'] != 840)
+        if($input['country_id'] != 840)
         {
-            $input['state'] = null;
+            $input['state_id'] = null;
         }
 
         $input['code'] = str_random(30);
         $input['password'] = Hash::make($request['password']);
+        
+        $address = Address::create($input);
+        $input['address_id'] = $address->id;
         
         $user = User::create($input);
 

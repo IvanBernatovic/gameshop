@@ -156,6 +156,7 @@ return [
 		'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
 		'Webpatser\Countries\CountriesServiceProvider',
 		'AdrianMejias\States\StatesServiceProvider',
+		'Orangehill\Iseed\IseedServiceProvider',
 
 
 	],

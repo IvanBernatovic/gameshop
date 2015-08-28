@@ -28,10 +28,10 @@ class RegistrationRequest extends Request
             'password' => 'required|between:6,25',
             'email' => 'required|email|unique:users,email',
             'repeat_password' => 'required|same:password',
-            'country' => 'required|exists:countries,id',
-            'state' => 'required_if:country,840',
+            'country_id' => 'required|exists:countries,id',
+            'state_id' => 'required_if:country,840',
             'city' => 'required',
-            'address' => 'required|between:3,255',
+            'street' => 'required|between:3,255',
             'ZIP' => 'required',
         ];
     }

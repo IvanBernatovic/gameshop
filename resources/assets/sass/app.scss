@@ -60,6 +60,10 @@ a.product-link, a.product-link:hover, a.product-link:active {
 	color: inherit;
 }
 
+a.inherit, a.inherit:hover, a.inherit:active {
+	color: inherit;
+}
+
 .product-listing-title{
 	height: 1.9em;
 	margin-left: 5px;
@@ -156,3 +160,17 @@ div.product-img-wrapper-big{
 .register-form {
 	@extend .col-md-8, .col-lg-6;
 }
+
+.cart-panel {
+	@extend .col-sm-9, .panel, .panel-default;
+	font-size: 1.2em;
+}
+
+.cart-content {
+	@extend .panel-body, .white-section, .table, .table-bordered, .table-hover;
+}
+
+.total-price {
+	font-size: 1.2em;
+}
+

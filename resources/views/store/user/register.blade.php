@@ -20,20 +20,20 @@
 		{!! Form::password('repeat_password', ['class' => 'form-control', 'placeholder' => 'Repeat password', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('country', 'Country') !!}
-		{!! Form::select('country', Countries::lists('name', 'id'), null, ['class' => 'form-control']) !!}
+		{!! Form::label('country_id', 'Country') !!}
+		{!! Form::select('country_id', Countries::lists('name', 'id'), null, ['class' => 'form-control']) !!}
 	</div>
 	<div id="states" class="form-group hide">
-		{!! Form::label('state', 'State') !!}
-		{!! Form::select('state', States::lists('name', 'id'), null, ['class' => 'form-control']) !!}
+		{!! Form::label('state_id', 'State') !!}
+		{!! Form::select('state_id', States::lists('name', 'id'), null, ['class' => 'form-control']) !!}
 	</div>
 	<div class="form-group">
 		{!! Form::label('city', 'City') !!}
 		{!! Form::text('city', null, ['class' => 'form-control', 'placeholder' => 'City', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
-		{!! Form::label('address', 'Address (street and number)') !!}
-		{!! Form::text('address', null, ['class' => 'form-control', 'placeholder' => 'Address', 'required' => 'null']) !!}
+		{!! Form::label('street', 'Address (street and number)') !!}
+		{!! Form::text('street', null, ['class' => 'form-control', 'placeholder' => 'Address', 'required' => 'null']) !!}
 	</div>
 	<div class="form-group">
 		{!! Form::label('ZIP', 'ZIP (postal code)') !!}

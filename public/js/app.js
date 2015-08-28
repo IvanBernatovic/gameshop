@@ -26,11 +26,23 @@ $(document).ready(function(){
 	});
 
 	// For showing States options if United States are selected as Country
-	$('select#country').on('change', function(event) {
+	$('select#country_id').on('change', function(event) {
 		if($(this).val() == 840) {
 			$('div#states').removeClass('hide');
 		} else {
 			$('div#states').addClass('hide');
 		}
 	});
+
+	// For showing new inputs if user want change shipping address
+	$('input:radio[name="shippingAddress"]').change(
+		function(){
+			if ($(this).is(':checked') && $(this).val() == 'otherAddress') {
+            	$('div#otherAddress').removeClass('hide');
+            	$('html, body').animate({ scrollTop: $('div#otherAddress').offset().top }, 'slow');
+            } else {
+            	$('div#otherAddress').addClass('hide');
+            }
+        }
+    );
 });

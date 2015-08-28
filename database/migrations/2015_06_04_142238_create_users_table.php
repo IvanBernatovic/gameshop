@@ -26,11 +26,7 @@ class CreateUsersTable extends Migration {
 			/**
 			 * Address information
 			 */
-			$table->text('address');
-			$table->string('country');
-			$table->string('state')->nullable();
-			$table->string('ZIP');
-			$table->string('city');
+			$table->integer('address_id')->unsigned();
 
 			/**
 			 * Account activation info

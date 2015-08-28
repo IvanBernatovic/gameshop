@@ -22,6 +22,17 @@ class DatabaseSeeder extends Seeder {
 		// Seed the states
 		$this->call('StatesSeeder');	
 		$this->command->info('Seeded the states!');
+		$this->call('MigrationsTableSeeder');
+		$this->call('UsersTableSeeder');
+		$this->call('CountriesTableSeeder');
+		$this->call('StatesTableSeeder');
+		$this->call('CategoriesTableSeeder');
+		$this->call('AddressesTableSeeder');
+		$this->call('ProductsTableSeeder');
+		$this->call('StatusCodesTableSeeder');
+		$this->call('PaymentMethodsTableSeeder');
+		$this->call('OrdersTableSeeder');
+		$this->call('OrderProductTableSeeder');
 	}
 
 }
