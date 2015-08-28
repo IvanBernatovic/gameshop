@@ -39,4 +39,9 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Address');
     }
+
+    public function fullIncomeBetween($day)
+    {
+        return $this->whereDay('created_at', $day)->sum('full_price');
+    }
 }

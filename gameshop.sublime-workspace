@@ -272,50 +272,58 @@
 	"buffers":
 	[
 		{
-			"file": "app/Http/routes.php",
+			"file": "resources/views/admin/master.blade.php",
 			"settings":
 			{
-				"buffer_size": 5772,
+				"buffer_size": 1246,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/Admin/OrderController.php",
+			"file": "resources/views/admin/overview.blade.php",
 			"settings":
 			{
-				"buffer_size": 1266,
+				"buffer_size": 588,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "resources/views/admin/products/show.blade.php",
+			"file": "public/js/app.js",
 			"settings":
 			{
-				"buffer_size": 1957,
+				"buffer_size": 1583,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "database/seeds/AddressesTableSeeder.php",
+			"file": "resources/views/admin/chart-script.blade.php",
 			"settings":
 			{
-				"buffer_size": 857,
+				"buffer_size": 1829,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/Http/Requests/Admin/EditOrderRequest.php",
+			"file": "app/Models/Order.php",
 			"settings":
 			{
-				"buffer_size": 544,
+				"buffer_size": 996,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "vendor/laravel/framework/src/Illuminate/Support/Collection.php",
+			"settings":
+			{
+				"buffer_size": 23225,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/Http/Controllers/Admin/CategoryController.php",
+			"file": "app/Http/routes.php",
 			"settings":
 			{
-				"buffer_size": 3515,
+				"buffer_size": 5850,
 				"line_ending": "Windows"
 			}
 		}
@@ -444,22 +452,30 @@
 	[
 		"/C/XAMPP/htdocs/gameshop",
 		"/C/XAMPP/htdocs/gameshop/app",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/Store",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Requests",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/Admin",
-		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/Shopping",
-		"/C/XAMPP/htdocs/gameshop/database",
+		"/C/XAMPP/htdocs/gameshop/database/migrations",
 		"/C/XAMPP/htdocs/gameshop/database/seeds",
-		"/C/XAMPP/htdocs/gameshop/public",
+		"/C/XAMPP/htdocs/gameshop/public/fonts",
 		"/C/XAMPP/htdocs/gameshop/resources",
 		"/C/XAMPP/htdocs/gameshop/resources/views",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/categories",
 		"/C/XAMPP/htdocs/gameshop/resources/views/errors",
-		"/C/XAMPP/htdocs/gameshop/resources/views/store"
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/shopping"
 	],
 	"file_history":
 	[
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/Admin/MainController.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/Admin/OrderController.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/store/shopping/order-shipping.blade.php",
+		"/C/XAMPP/htdocs/gameshop/app/User.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/sidebar.blade.php",
+		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_142238_create_users_table.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/routes.php",
+		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/show.blade.php",
+		"/C/XAMPP/htdocs/gameshop/database/seeds/AddressesTableSeeder.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/Admin/CategoryController.php",
+		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/Admin/EditOrderRequest.php",
+		"/C/XAMPP/htdocs/gameshop/public/js/app.js",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/orders/show.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/orders/edit.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/errors/list.blade.php",
@@ -470,9 +486,7 @@
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/app.scss",
-		"/C/XAMPP/htdocs/gameshop/app/Http/routes.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/user/login.blade.php",
-		"/C/XAMPP/htdocs/gameshop/public/js/app.js",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/UserController.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/user/register.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/user/loginMessage.blade.php",
@@ -482,7 +496,6 @@
 		"/C/XAMPP/htdocs/gameshop/app/Events/UserIsRegistered.php",
 		"/C/XAMPP/htdocs/gameshop/_ide_helper.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/User/RegistrationRequest.php",
-		"/C/XAMPP/htdocs/gameshop/app/User.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/emails/confirmRegistration.blade.php",
 		"/C/Users/Ivan/AppData/Roaming/Sublime Text 3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
 		"/C/XAMPP/htdocs/gameshop/app/Providers/EventServiceProvider.php",
@@ -518,7 +531,6 @@
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/products/new-products.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/index.blade.php",
 		"/C/XAMPP/htdocs/gameshop/app/Providers/ViewComposerServiceProvider.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/products/show.blade.php",
 		"/C/XAMPP/htdocs/gameshop/app/Models/Product.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Controllers/AdminProductController.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/categories/category-panel-heading.blade.php",
@@ -539,7 +551,6 @@
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/bootstrap/assets/stylesheets/_custom-variables.scss",
 		"/E/Program Files/Steam/SteamApps/common/Super Meat Boy/buttonmap.cfg",
 		"/E/Program Files/Steam/SteamApps/common/Super Meat Boy/buttonmap.cfg.bak",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin/sidebar.blade.php",
 		"/C/XAMPP/htdocs/gameshop/app/Providers/ModelEventsServiceProvider.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/store/helpers/listing-price.blade.php",
 		"/C/XAMPP/htdocs/gameshop/app/Http/Requests/EditCategoryRequest.php",
@@ -576,18 +587,11 @@
 		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/_admin_markup.scss",
 		"/C/XAMPP/htdocs/gameshop/resources/views/welcome.blade.php",
 		"/C/XAMPP/htdocs/gameshop/resources/views/admin/navigation.blade.php",
-		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_142238_create_users_table.php",
 		"/C/XAMPP/htdocs/git/movieblog/resources/views/home.blade.php",
 		"/C/XAMPP/htdocs/gameshop/gulpfile.js",
 		"/C/XAMPP/htdocs/gameshop/database/migrations/2015_06_04_114119_create_users_table.php",
 		"/C/XAMPP/htdocs/gameshop/app/Product.php",
-		"/C/XAMPP/htdocs/gameshop/Category.php",
-		"/C/XAMPP/htdocs/gameshop/resources/assets/sass/bootstrap/assets/stylesheets/_bootstrap.scss",
-		"/C/XAMPP/htdocs/gameshop/resources/views/master.blade.php",
-		"/C/XAMPP/htdocs/movieblog/resources/views/master.blade.php",
-		"/C/XAMPP/htdocs/gameshop/resources/views/admin_master.blade.php",
-		"/E/Ivan/E-knjige/Web Development/Tutsplus - Build an eCommerce App in Laravel[TheGreatSage]/source/final-source/app/storage/views/2d957262ca86edd76de0ffae52075486",
-		"/C/XAMPP/htdocs/git/movieblog/resources/views/master.blade.php"
+		"/C/XAMPP/htdocs/gameshop/Category.php"
 	],
 	"find":
 	{
@@ -682,85 +686,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Http/routes.php",
+					"file": "resources/views/admin/master.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5772,
+						"buffer_size": 1246,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2876,
-								2876
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2046.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Http/Controllers/Admin/OrderController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1266,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1263,
-								1263
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 462.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "resources/views/admin/products/show.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1957,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								966,
-								966
+								1246,
+								1246
 							]
 						],
 						"settings":
@@ -773,54 +716,116 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "database/seeds/AddressesTableSeeder.php",
+					"buffer": 1,
+					"file": "resources/views/admin/overview.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 857,
+						"buffer_size": 588,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								548,
-								548
+								476,
+								476
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"open_with_edit": true,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 352.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "app/Http/Requests/Admin/EditOrderRequest.php",
+					"buffer": 2,
+					"file": "public/js/app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 544,
+						"buffer_size": 1583,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								493,
-								493
+								1580,
+								1580
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 759.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "resources/views/admin/chart-script.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1829,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								991,
+								1095
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"open_with_edit": true,
+							"spell_check": false,
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Models/Order.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 996,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								859,
+								859
 							]
 						],
 						"settings":
@@ -831,39 +836,70 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 132.0,
+						"translation.y": 713.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/Http/Controllers/Admin/CategoryController.php",
+					"file": "vendor/laravel/framework/src/Illuminate/Support/Collection.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3515,
+						"buffer_size": 23225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								279,
+								279
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7207.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/Http/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5850,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								489,
+								489
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1980.0,
+						"translation.y": 138.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -926,6 +962,38 @@
 		"selected_items":
 		[
 			[
+				"order.p",
+				"app\\Models\\Order.php"
+			],
+			[
+				"order",
+				"app\\Http\\Controllers\\Admin\\OrderController.php"
+			],
+			[
+				"master",
+				"resources\\views\\admin\\master.blade.php"
+			],
+			[
+				"app.j",
+				"public\\js\\app.js"
+			],
+			[
+				"user.php",
+				"app\\User.php"
+			],
+			[
+				"main",
+				"app\\Http\\Controllers\\Admin\\MainController.php"
+			],
+			[
+				"route",
+				"app\\Http\\routes.php"
+			],
+			[
+				"app.js",
+				"public\\js\\app.js"
+			],
+			[
 				"products/show",
 				"resources\\views\\admin\\products\\show.blade.php"
 			],
@@ -970,10 +1038,6 @@
 				"gameshop\\app\\Http\\Requests\\User\\RegistrationRequest.php"
 			],
 			[
-				"app.js",
-				"gameshop\\public\\js\\app.js"
-			],
-			[
 				"composer",
 				"gameshop\\composer.json"
 			],
@@ -982,16 +1046,8 @@
 				"gameshop\\resources\\views\\store\\user\\login.blade.php"
 			],
 			[
-				"master",
-				"gameshop\\resources\\views\\admin\\master.blade.php"
-			],
-			[
 				"app.scss",
 				"gameshop\\resources\\assets\\sass\\app.scss"
-			],
-			[
-				"route",
-				"gameshop\\app\\Http\\routes.php"
 			],
 			[
 				"store",
@@ -1126,10 +1182,6 @@
 				"app\\Models\\User.php"
 			],
 			[
-				"user.php",
-				"app\\Models\\User.php"
-			],
-			[
 				"create_art",
 				"database\\migrations\\2015_04_29_173206_create_articles_table.php"
 			],
@@ -1179,12 +1231,16 @@
 	},
 	"select_symbol":
 	{
-		"height": 0.0,
-		"last_filter": "",
+		"height": 400.0,
+		"last_filter": "collection",
 		"selected_items":
 		[
+			[
+				"collection",
+				"Collection"
+			]
 		],
-		"width": 0.0
+		"width": 819.0
 	},
 	"selected_group": 0,
 	"settings":
@@ -1237,7 +1293,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 280.0,
 	"status_bar_visible": true,
 	"template_settings":

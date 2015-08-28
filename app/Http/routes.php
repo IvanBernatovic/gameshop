@@ -14,8 +14,11 @@
 
 
 Route::group(['prefix' => 'admin'], function()
-{
-	Route::get('/', 'Admin\MainController@index');
+{	
+	Route::get('/', [
+		'as' => 'AdminOverview',
+		'uses' => 'Admin\MainController@index'
+	]);
 
 	/**
 	 * Category related routes
@@ -125,6 +128,10 @@ Route::group(['prefix' => 'admin'], function()
 		'as' => 'AdminOrderUpdate',
 		'uses' => 'Admin\OrderController@update'
 	]);
+
+	/**
+	 * Other admin pages
+	 */
 });
 
 /**

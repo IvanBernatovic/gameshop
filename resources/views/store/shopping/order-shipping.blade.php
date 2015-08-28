@@ -16,17 +16,6 @@
 	</div>
 	<div class="panel-footer clearfix">
 		<span class="total-price"><strong>Total: ${{ Cart::totalWithShipping() }}</strong></span>
-		<form action="" method="POST" class="hide">
-		<script
-			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			data-key="pk_test_Z1xHfrj7X6ngwa8MhtnB97TD"
-			data-amount="{{ $cart->totalWithShipping() * 100}}"
-			data-name="Gameshop"
-			data-description="{{ $cart->count() }} product(s) - ${{ $cart->totalWithShipping() }}"
-			data-image="{{ asset('favicon.png') }}"
-			data-locale="auto">
-		</script>
-	</form>
 	</div>
 </div>
 
