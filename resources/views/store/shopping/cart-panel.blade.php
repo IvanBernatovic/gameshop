@@ -1,9 +1,9 @@
 <div class="cart-panel">
 	<div class="panel-body">
 		<ul class="nav navbar-nav navbar-left">
-			<li><a class="inherit" href="#">Checkout</a></li>
+			<li><a class="inherit" href="{{ route('StoreCartCheckout') }}">Checkout</a></li>
 			<li><a class="inherit" href="{{ route('StoreCart') }}">
-				<span><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> {{ $cartCount }} products</span>
+				<span><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> {{ $cartCount }} product(s)</span>
 			</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">

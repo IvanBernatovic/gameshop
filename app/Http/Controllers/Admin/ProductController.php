@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Requests\ProductRequest;
@@ -14,7 +14,7 @@ use File;
 
 use Illuminate\Http\Request;
 
-class AdminProductController extends Controller {
+class ProductController extends Controller {
 
 	const DEFAULT_IMG = "img/no_product_img.jpg";
 
@@ -23,7 +23,8 @@ class AdminProductController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index(){
+	public function index()
+	{
 
 		// Select all products with pagination, paginate 40 products per page
 		$products = Product::paginate(40);
@@ -57,8 +58,8 @@ class AdminProductController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(ProductRequest $request){
-		
+	public function store(ProductRequest $request)
+	{		
 		/**
 		 * Take all inputs except image, store image in seperate variable
 		 * @var Array
@@ -109,7 +110,8 @@ class AdminProductController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show(Product $product){
+	public function show(Product $product)
+	{
 		
 		return view('admin.products.show')->with(compact('product'));
 	}
@@ -119,7 +121,8 @@ class AdminProductController extends Controller {
 	 * @param  Product $product
 	 * @return Response
 	 */
-	public function edit(Product $product){
+	public function edit(Product $product)
+	{
 
 		/**
 		 * Select all categories that have no child categories and return them in form of 
@@ -140,7 +143,8 @@ class AdminProductController extends Controller {
 	 * @param  Product        $product
 	 * @return Response
 	 */
-	public function update(EditProductRequest $request, Product $product){
+	public function update(EditProductRequest $request, Product $product)
+	{
 		
 		$input = $request->except('image');
 		$image = $request->file('image');
@@ -195,7 +199,8 @@ class AdminProductController extends Controller {
 	 * @param  Product $product 
 	 * @return Response
 	 */
-	public function delete(Product $product){
+	public function delete(Product $product)
+	{
 
 		return view('admin.products.delete')->with(compact('product'));
 	}

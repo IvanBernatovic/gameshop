@@ -60,4 +60,9 @@ class Product extends Model {
             }
         });
 	}
+
+	public function products()
+    {
+    	return $this->belongsToMany('App\Models\Order', 'order_product');
+    }
 }

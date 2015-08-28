@@ -35,7 +35,7 @@
 	<div class="panel-footer clearfix">
 		<span class="total-price"><strong>Total: ${{ Cart::total() }}</strong></span>
 		<span class="pull-right">
-			<button class="btn btn-success">Proceed to checkout</button>
+			<a href="{{ route('StoreCartCheckout') }}"><button class="btn btn-success">Proceed to checkout</button></a>
 			<a href="{{ route('StoreClearCart') }}"><button class="btn btn-danger">Clear cart</button></a>
 		</span>
 	</div>

@@ -15,49 +15,49 @@
 
 Route::group(['prefix' => 'admin'], function()
 {
-	Route::get('/', 'AdminController@index');
+	Route::get('/', 'Admin\MainController@index');
 
 	/**
 	 * Category related routes
 	 */
 	Route::get('/categories', [
 		'as' => 'AdminCategoryIndex',
-		'uses' => 'AdminCategoryController@index'
+		'uses' => 'Admin\CategoryController@index'
 	]);
 
 	Route::get('/categories/create', [
 		'as' => 'AdminCategoryCreate',
-		'uses' => 'AdminCategoryController@create'
+		'uses' => 'Admin\CategoryController@create'
 	]);
 
 	Route::post('/categories', [
 		'as' => 'AdminCategoryStore',
-		'uses' => 'AdminCategoryController@store'
+		'uses' => 'Admin\CategoryController@store'
 	]);
 
 	Route::get('/categories/{category}', [
 		'as' => 'AdminCategoryShow',
-		'uses' => 'AdminCategoryController@show'
+		'uses' => 'Admin\CategoryController@show'
 	]);
 
 	Route::get('/categories/{category}/edit', [
 		'as' => 'AdminCategoryEdit',
-		'uses' => 'AdminCategoryController@edit'
+		'uses' => 'Admin\CategoryController@edit'
 	]);
 
 	Route::patch('/categories/{category}', [
 		'as' => 'AdminCategoryUpdate',
-		'uses' => 'AdminCategoryController@update'
+		'uses' => 'Admin\CategoryController@update'
 	]);
 
 	Route::get('/categories/{category}/delete', [
 		'as' => 'AdminCategoryDelete',
-		'uses' => 'AdminCategoryController@delete'
+		'uses' => 'Admin\CategoryController@delete'
 	]);
 
 	Route::delete('/categories/{category}', [
 		'as' => 'AdminCategoryDestroy',
-		'uses' => 'AdminCategoryController@destroy'
+		'uses' => 'Admin\CategoryController@destroy'
 	]);
 
 	/**
@@ -65,42 +65,65 @@ Route::group(['prefix' => 'admin'], function()
 	 */
 	Route::get('/products', [
 		'as' => 'AdminProductIndex',
-		'uses' => 'AdminProductController@index'
+		'uses' => 'Admin\ProductController@index'
 	]);
 
 	Route::get('/products/create', [
 		'as' => 'AdminProductCreate',
-		'uses' => 'AdminProductController@create'
+		'uses' => 'Admin\ProductController@create'
 	]);
 
 	Route::post('/products', [
 		'as' => 'AdminProductStore',
-		'uses' => 'AdminProductController@store'
+		'uses' => 'Admin\ProductController@store'
 	]);
 
 	Route::get('/products/{product}', [
 		'as' => 'AdminProductShow',
-		'uses' => 'AdminProductController@show'
+		'uses' => 'Admin\ProductController@show'
 	]);
 
 	Route::get('/products/{product}/edit', [
 		'as' => 'AdminProductEdit',
-		'uses' => 'AdminProductController@edit'
+		'uses' => 'Admin\ProductController@edit'
 	]);
 
 	Route::patch('/products/{product}', [
 		'as' => 'AdminProductUpdate',
-		'uses' => 'AdminProductController@update'
+		'uses' => 'Admin\ProductController@update'
 	]);
 
 	Route::get('/products/{product}/delete', [
 		'as' => 'AdminProductDelete',
-		'uses' => 'AdminProductController@delete'
+		'uses' => 'Admin\ProductController@delete'
 	]);
 
 	Route::delete('/products/{product}', [
 		'as' => 'AdminProductDestroy',
-		'uses' => 'AdminProductController@destroy'
+		'uses' => 'Admin\ProductController@destroy'
+	]);
+
+	/**
+	 * Order related routes
+	 */
+	Route::get('/orders', [
+		'as' => 'AdminOrderIndex',
+		'uses' => 'Admin\OrderController@index'
+	]);
+
+	Route::get('/orders/{order}', [
+		'as' => 'AdminOrderShow',
+		'uses' => 'Admin\OrderController@show'
+	]);
+
+	Route::get('/orders/{order}/edit', [
+		'as' => 'AdminOrderEdit',
+		'uses' => 'Admin\OrderController@edit'
+	]);
+
+	Route::patch('/orders/{order}', [
+		'as' => 'AdminOrderUpdate',
+		'uses' => 'Admin\OrderController@update'
 	]);
 });
 
@@ -168,6 +191,53 @@ Route::get('/cart/clear-cart', [
 	'as' => 'StoreClearCart',
 	'uses' => 'Store\CartController@clear'
 ]);
+
+/**
+ * Checkout and order routes
+ */
+Route::group(['middleware' => 'auth'], function(){
+	Route::get('/cart/checkout', [
+		'as' => 'StoreCartCheckout',
+		'middleware' => 'checkout',
+		'uses' => 'Store\CartController@checkout'
+	]);
+
+	Route::get('/cart/order', [
+		'as' => 'StoreOrder',
+		'middleware' => 'checkout',
+		'uses' => 'Store\OrderController@show'
+	]);
+
+	Route::post('/cart/order', [
+		'as' => 'StoreOrderShipping',
+		'middleware' => 'checkout',
+		'uses' => 'Store\OrderController@proccessShipping'
+	]);
+
+	Route::get('/cart/order/confirm', [
+		'as' => 'StoreOrderConfirm',
+		'middleware' => 'checkout',
+		'uses' => 'Store\OrderController@confirm'
+	]);
+
+	Route::post('/cart/order/pay', [
+		'as' => 'StoreOrderPay',
+		'middleware' => 'checkout',
+		'uses' => 'Store\OrderController@pay'
+	]);
+});
+
+Route::get('/test', function() {
+	$cartProducts = \Cart::associate('Product', 'App\Models')->content();
+	$products = new Illuminate\Support\Collection;
+	foreach($cartProducts as $item)
+	{
+		$products->push(['product' => \App\Models\Product::find($item->id), 
+			'quantity' => $item->qty]);
+	}
+
+	dd($products);
+});
 
 /**
  * Showing products and categories

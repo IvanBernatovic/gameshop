@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use App\Http\Requests\CategoryRequest;
@@ -11,7 +11,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Validator;
 
-class AdminCategoryController extends Controller {
+class CategoryController extends Controller {
 
 	/**
 	 * Returns list of all categories

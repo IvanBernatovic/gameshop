@@ -38,9 +38,8 @@ class CartController extends Controller
 
     public function show()
     {
-    	$cart = Cart::instance('main');
-
-    	return view('store.shopping.cart')->with(compact('cart'));
+    	
+    	return view('store.shopping.cart');
     }
 
     /**
@@ -55,10 +54,24 @@ class CartController extends Controller
     	return back();
     }
 
+    /**
+     * Clears current cart
+     * @return Response
+     */
     public function clear()
     {
     	Cart::destroy();
 
     	return back();
+    }
+
+    /**
+     * Shows view for confirming cart content and proceeding to order
+     * @return Response
+     */
+    public function checkout()
+    {
+        
+        return view('store.shopping.checkout');
     }
 }
