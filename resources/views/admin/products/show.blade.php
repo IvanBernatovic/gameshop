@@ -20,7 +20,7 @@
 				<a class="btn btn-default" href="{{ route('AdminProductEdit', $product->slug) }}" role="button">Edit product</a>
 				<a class="btn btn-default" href="{{ route('AdminProductDelete', $product->slug) }}" role="button">Delete product</a>
 				@if($product->active)
-				<a class="btn btn-default" href="{{ route('StoreProductShow', $product->slug) }}" role="button">Store page</a>
+				<a class="btn btn-default" href="{{ route('StoreProductShow', $product->slug) }}" role="button" target="_blank">Store page</a>
 				@endif
 			</div>
 			
