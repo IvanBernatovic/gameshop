@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
  * Custom requests
  */
 use App\Http\Requests\Admin\EditOrderRequest;
+use App\Http\Requests\Admin\FilterOrderRequest;
 
 /**
  * Custom models
@@ -20,13 +21,15 @@ use App\Models\StatusCode;
 
 class OrderController extends Controller
 {	
+    const PAGINATION_SIZE = 20;
+
 	/**
 	 * Shows table with orders, ordered by status code (pending first) and time created
 	 * @return Response
 	 */
     public function index()
     {
-    	$orders = Order::orderBy('status_code_id')->orderBy('created_at', 'asc')->paginate(20);
+    	$orders = Order::orderBy('status_code_id')->orderBy('created_at', 'asc')->paginate(self::PAGINATION_SIZE);
 
     	return view('admin.orders.index', compact('orders'));
     }
@@ -51,5 +54,14 @@ class OrderController extends Controller
         $request->session()->flash('status', 'Order status has been updated.');
 
         return redirect()->route('AdminOrderShow', $order);
+    }
+
+    public function filter(FilterOrderRequest $request)
+    {
+        $query = $request->get('orderFilter');
+
+        $orders = Order::where('status_code_id', $query)->orderBy('created_at', 'asc')->paginate(self::PAGINATION_SIZE);
+
+        return view('admin.orders.index', compact('orders'));
     }
 }

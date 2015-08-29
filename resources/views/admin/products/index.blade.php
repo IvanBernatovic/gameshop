@@ -2,7 +2,13 @@
 
 @section('content')
 
-<a class="btn btn-default" href="{{ route('AdminProductCreate') }}" role="button">Create new product</a>
+<form class="form-inline" method="GET" action="{{ route('AdminProductSearch') }}">
+	<div class="form-group">
+		<input name="q" type="text" class="form-control" placeholder="Search...">
+	</div>
+	<button type="submit" class="btn btn-primary">Search</button>
+</form>
+<a class="btn btn-default btn-margin" href="{{ route('AdminProductCreate') }}" role="button">Create new product</a>
 
 <div class="categories">
 	<table class="table table-hover">

@@ -71,6 +71,11 @@ Route::group(['prefix' => 'admin'], function()
 		'uses' => 'Admin\ProductController@index'
 	]);
 
+	Route::get('/products/search', [
+		'as' => 'AdminProductSearch',
+		'uses' => 'Admin\ProductController@search'
+	]);
+
 	Route::get('/products/create', [
 		'as' => 'AdminProductCreate',
 		'uses' => 'Admin\ProductController@create'
@@ -112,6 +117,11 @@ Route::group(['prefix' => 'admin'], function()
 	Route::get('/orders', [
 		'as' => 'AdminOrderIndex',
 		'uses' => 'Admin\OrderController@index'
+	]);
+
+	Route::get('/orders/filter', [
+		'as' => 'AdminOrderFilter',
+		'uses' => 'Admin\OrderController@filter'
 	]);
 
 	Route::get('/orders/{order}', [
