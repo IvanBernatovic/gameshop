@@ -140,8 +140,19 @@ Route::group(['prefix' => 'admin'], function()
 	]);
 
 	/**
-	 * Other admin pages
+	 * Customer related admin routes
 	 */
+	Route::model('user', 'App\User');
+	
+	Route::get('/customers', [
+		'as' => 'AdminCustomerIndex',
+		'uses' => 'Admin\CustomerController@index'
+	]);
+
+	Route::get('/customers/{user}', [
+		'as' => 'AdminCustomerShow',
+		'uses' => 'Admin\CustomerController@show'
+	]);
 });
 
 /**
@@ -242,18 +253,6 @@ Route::group(['middleware' => 'auth'], function(){
 		'middleware' => 'checkout',
 		'uses' => 'Store\OrderController@pay'
 	]);
-});
-
-Route::get('/test', function() {
-	$cartProducts = \Cart::associate('Product', 'App\Models')->content();
-	$products = new Illuminate\Support\Collection;
-	foreach($cartProducts as $item)
-	{
-		$products->push(['product' => \App\Models\Product::find($item->id), 
-			'quantity' => $item->qty]);
-	}
-
-	dd($products);
 });
 
 /**

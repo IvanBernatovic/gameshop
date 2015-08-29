@@ -46,7 +46,7 @@ $(document).ready(function(){
         }
     );
 
-    $('#orderFilter').change(function() {
+    /*$('#orderFilter').change(function() {
         this.form.submit();
-    });
+    });*/
 });
