@@ -57,6 +57,9 @@ class RouteServiceProvider extends ServiceProvider {
 
 		// Add Order model for route model binding
 		$router->model('order', 'App\Models\Order');
+
+		// Add User model for route model binding
+		$router->model('user', 'App\User');
 	}
 
 	/**

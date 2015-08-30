@@ -34,6 +34,8 @@ class CreateUsersTable extends Migration {
 			$table->boolean('activated')->default(false);
 			$table->string('code', 30)->nullable();
 
+			$table->softDeletes();
+
 			$table->rememberToken();
 			$table->timestamps();
 		});

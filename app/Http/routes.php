@@ -14,8 +14,11 @@
 
 
 Route::group(['prefix' => 'admin'], function()
-{
-	Route::get('/', 'Admin\MainController@index');
+{	
+	Route::get('/', [
+		'as' => 'AdminOverview',
+		'uses' => 'Admin\MainController@index'
+	]);
 
 	/**
 	 * Category related routes
@@ -68,6 +71,11 @@ Route::group(['prefix' => 'admin'], function()
 		'uses' => 'Admin\ProductController@index'
 	]);
 
+	Route::get('/products/search', [
+		'as' => 'AdminProductSearch',
+		'uses' => 'Admin\ProductController@search'
+	]);
+
 	Route::get('/products/create', [
 		'as' => 'AdminProductCreate',
 		'uses' => 'Admin\ProductController@create'
@@ -111,6 +119,11 @@ Route::group(['prefix' => 'admin'], function()
 		'uses' => 'Admin\OrderController@index'
 	]);
 
+	Route::get('/orders/filter', [
+		'as' => 'AdminOrderFilter',
+		'uses' => 'Admin\OrderController@filter'
+	]);
+
 	Route::get('/orders/{order}', [
 		'as' => 'AdminOrderShow',
 		'uses' => 'Admin\OrderController@show'
@@ -124,6 +137,21 @@ Route::group(['prefix' => 'admin'], function()
 	Route::patch('/orders/{order}', [
 		'as' => 'AdminOrderUpdate',
 		'uses' => 'Admin\OrderController@update'
+	]);
+
+	/**
+	 * Customer related admin routes
+	 */
+	Route::model('user', 'App\User');
+	
+	Route::get('/customers', [
+		'as' => 'AdminCustomerIndex',
+		'uses' => 'Admin\CustomerController@index'
+	]);
+
+	Route::get('/customers/{user}', [
+		'as' => 'AdminCustomerShow',
+		'uses' => 'Admin\CustomerController@show'
 	]);
 });
 
@@ -225,18 +253,6 @@ Route::group(['middleware' => 'auth'], function(){
 		'middleware' => 'checkout',
 		'uses' => 'Store\OrderController@pay'
 	]);
-});
-
-Route::get('/test', function() {
-	$cartProducts = \Cart::associate('Product', 'App\Models')->content();
-	$products = new Illuminate\Support\Collection;
-	foreach($cartProducts as $item)
-	{
-		$products->push(['product' => \App\Models\Product::find($item->id), 
-			'quantity' => $item->qty]);
-	}
-
-	dd($products);
 });
 
 /**

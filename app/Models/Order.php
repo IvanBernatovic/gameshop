@@ -39,4 +39,9 @@ class Order extends Model
     {
         return $this->belongsTo('App\Models\Address');
     }
+
+    public function pendingOrderCount()
+    {
+        return $this->where('status_code_id', 1)->count();
+    }
 }

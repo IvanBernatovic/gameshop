@@ -31,6 +31,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
 	/**
 	 * Activates the user
 	 * @return User
@@ -52,6 +54,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasOne('\App\Models\Address', 'id', 'address_id');
 	}
 
-	
-
+	public function orders()
+	{
+		return $this->hasMany('\App\Models\Order');
+	}
 }

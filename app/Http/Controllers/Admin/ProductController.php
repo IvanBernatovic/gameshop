@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 class ProductController extends Controller {
 
 	const DEFAULT_IMG = "img/no_product_img.jpg";
+	const PAGINATION_SIZE = 40;
 
 	/**
 	 * Display a listing of the Product model instances.
@@ -27,7 +28,7 @@ class ProductController extends Controller {
 	{
 
 		// Select all products with pagination, paginate 40 products per page
-		$products = Product::paginate(40);
+		$products = Product::paginate(self::PAGINATION_SIZE);
 
 		return view('admin.products.index')->with(compact('products'));
 	}
@@ -231,5 +232,18 @@ class ProductController extends Controller {
 
 		return redirect(route('AdminProductIndex'));
 	}
+	/**
+	 * Search products table
+	 * @param  Request $request
+	 * @return Response
+	 */
+	public function search(Request $request)
+	{
+		$query = $request->get('q');
 
+		$products = Product::where('name', 'like', '%'.$query.'%')
+			->paginate(self::PAGINATION_SIZE);
+
+		return view('admin.products.index', compact('products'));
+	}
 }

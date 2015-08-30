@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Order;
 
 use Auth;
 use Cart;
@@ -23,6 +24,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $this->composeNewProductsPanel();
         $this->composeCartPanel();
         $this->composeCartInstance();
+        $this->composeAdminSidebar();
     }
 
     /**
@@ -67,7 +69,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         view()->composer('store.shopping.cart-panel', function($view){
             $view->with([
-                'user' => $user = Auth::user(),
+                'user' => Auth::user(),
                 'cartCount' => Cart::count(),
 
             ]);
@@ -88,6 +90,16 @@ class ViewComposerServiceProvider extends ServiceProvider
             ], function($view){
             $view->with([
                 'cart' => Cart::instance('main'),
+            ]);
+        });
+    }
+
+    private function composeAdminSidebar()
+    {
+        view()->composer('admin.sidebar', function($view){
+            $view->with([
+                'pendingOrderCount' => Order::where('status_code_id', 1)->count(),
+                'proccessingOrderCount' => Order::where('status_code_id', 2)->count(),
             ]);
         });
     }
