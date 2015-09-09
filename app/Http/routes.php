@@ -11,14 +11,34 @@
 |
 */
 
+/**
+ * Admin login routes
+ */
+Route::get('admin/login', [
+	'as' => 'AdminLoginGet',
+	'middleware' => 'guest',
+	'uses' => 'Admin\MainController@getLogin'
+]);
 
+Route::post('admin/login', [
+	'as' => 'AdminLoginPost',
+	'middleware' => 'guest',
+	'uses' => 'Admin\MainController@postLogin'
+]);
 
-Route::group(['prefix' => 'admin'], function()
+Route::get('admin/logout', [
+	'as' => 'AdminLogout',
+	'middleware' => ['auth', 'admin'],
+	'uses' => 'Admin\MainController@logout'
+]);
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {	
 	Route::get('/', [
 		'as' => 'AdminOverview',
 		'uses' => 'Admin\MainController@index'
 	]);
+
 
 	/**
 	 * Category related routes

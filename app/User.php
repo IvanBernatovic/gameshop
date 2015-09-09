@@ -60,4 +60,19 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
 	{
 		return $this->hasMany('\App\Models\Order');
 	}
+
+	public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+    public function isAdmin()
+    {
+    	foreach ($this->roles as $role) {
+    		if($role->name == 'Administrator')
+    			return true;
+    	}
+
+    	return false;
+    }
 }
