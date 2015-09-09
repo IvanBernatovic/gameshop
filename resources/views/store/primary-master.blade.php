@@ -10,9 +10,9 @@
 <body>
 	<div class="container">
 		@include('store.header')
-		<div class="row">
-			@yield('content')
-		</div>
+			<div class="row">
+				@yield('content')
+			</div>
 		@include('store.footer')
 	</div>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

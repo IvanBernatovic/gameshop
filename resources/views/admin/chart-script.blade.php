@@ -1,7 +1,3 @@
-
-<?php
-	$today = Carbon\Carbon::today();
-?>
 <script type="text/javascript">
 	// Get context with jQuery - using jQuery's .get() method.
 	var ctx = $("#moneyChart").get(0).getContext("2d");

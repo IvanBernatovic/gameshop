@@ -255,10 +255,39 @@ Route::group(['middleware' => 'auth'], function(){
 	]);
 });
 
+
+Route::get('/contact', [
+	'as' => 'StoreContact',
+	'uses' => 'StoreController@contact'
+]);
+
+
+/**
+ * User profile related routes
+ */
+Route::get('/profile', [
+	'as' => 'StoreUserProfile',
+	'middleware' => 'auth',
+	'uses' => 'UserController@userProfile'
+]);
+
+Route::get('/profile/order/{order}', [
+	'as' => 'StoreUserOrderShow',
+	'middleware' => 'auth',
+	'uses' => 'UserController@showUserOrder'
+]);
+
+
+
 /**
  * Showing products and categories
  * IMPORTANT: Always have this routes on last lines
  */
+Route::get('/search', [
+	'as' => 'StoreProductSearch',
+	'uses' => 'StoreController@searchProduct'
+]);
+
 Route::get('/products/{product}', [
 	'middleware' => 'store.product',
 	'as' => 'StoreProductShow',
