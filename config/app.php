@@ -145,6 +145,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		'App\Providers\ViewComposerServiceProvider',
+		'App\Providers\AuthServiceProvider',
 
 		/*
 		 * Custom Service Providers...
@@ -213,6 +214,7 @@ return [
 		'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart',
 		'Countries' => 'Webpatser\Countries\CountriesFacade',
 		'States' 	=> 'AdrianMejias\States\StatesFacade',
+		'Gate' 		=> 'Illuminate\Support\Facades\GateFacade'
 
 	],
 

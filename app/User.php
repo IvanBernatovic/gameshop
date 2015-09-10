@@ -3,12 +3,14 @@
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Foundation\Auth\Access\Authorizable;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
+class User extends Model implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract {
 
-	use Authenticatable, CanResetPassword;
+	use Authenticatable, Authorizable, CanResetPassword;
 
 	/**
 	 * The database table used by the model.
@@ -31,6 +33,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	protected $dates = ['created_at', 'updated_at', 'deleted_at'];
+
 	/**
 	 * Activates the user
 	 * @return User
@@ -52,6 +56,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasOne('\App\Models\Address', 'id', 'address_id');
 	}
 
-	
+	public function orders()
+	{
+		return $this->hasMany('\App\Models\Order');
+	}
 
+	public function roles()
+    {
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+    public function isAdmin()
+    {
+    	foreach ($this->roles as $role) {
+    		if($role->name == 'Administrator')
+    			return true;
+    	}
+
+    	return false;
+    }
 }

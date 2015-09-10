@@ -12,6 +12,8 @@ class UserIsRegistered extends Event
 {
     use SerializesModels;
 
+    public $user;
+
     /**
      * Create a new event instance.
      *

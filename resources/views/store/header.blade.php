@@ -1,15 +1,10 @@
 <header>
-	<div class="col-sm-3">
-		<img class="img-responsive" src="{{ asset('gameshop_logo.png') }}"></img>
+	<div class="row">
+		<div class="col-sm-12">
+			<a href="/"><img class="img-responsive center-block" src="{{ asset('gameshop.png') }}"></img>
+		</div></a>
 	</div>
-	<div class="col-sm-9" style="background-color: yellow; height: 100px"></div>
-	<div class="col-sm-3">
-		<div class="input-group">
-			<input type="text" class="form-control" placeholder="Search products...">
-			<span class="input-group-btn">
-				<button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-			</span>
-		</div>
+	<div class="row">
+		@include('store.shopping.cart-panel')
 	</div>
-	@include('store.shopping.cart-panel')
 </header>

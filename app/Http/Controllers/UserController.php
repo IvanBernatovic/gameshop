@@ -2,31 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Event;
-
-use Auth;
-use Hash;
-
-/**
- * Custom Requests
- */
-use App\Http\Requests\User\RegistrationRequest;
-use App\Http\Requests\User\LoginRequest;
-
-/**
- * Events
- */
 use App\Events\UserIsRegistered;
-
-/**
- * Models
- */
-use App\User;
+use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Requests\User\LoginRequest;
+use App\Http\Requests\User\RegistrationRequest;
 use App\Models\Address;
+use App\Models\Order;
+use App\User;
+use Auth;
+use Event;
+use Hash;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -34,7 +21,7 @@ class UserController extends Controller
      * Shows register form
      * @return Reponse
      */
-	public function getRegister()
+    public function getRegister()
     {
 
         return view('store.user.register');
@@ -66,7 +53,7 @@ class UserController extends Controller
         Event::fire(new UserIsRegistered($user));
 
         return redirect(route('StoreUserLoginGet'))
-                ->with('flag', 'activationSent');
+        ->with('flag', 'activationSent');
     }
 
     /**b
@@ -121,12 +108,26 @@ class UserController extends Controller
         if($user == null)
         {
             return redirect(route('StoreUserLoginGet'))
-                    ->with('flag', 'notActivated');
+            ->with('flag', 'notActivated');
         } else {
             $user->activate()->save();
 
             return redirect(route('StoreUserLoginGet'))
-                    ->with('flag', 'activated');
+            ->with('flag', 'activated');
         }
+    }
+
+    public function userProfile()
+    {
+        $user = auth()->user();
+
+        return view('store.user.profile', compact('user'));
+    }
+    
+    public function showUserOrder($order)
+    {
+        // $this->authorize('show-order');
+        // dd($order);
+        return view('store.user.show-order', compact('order'));
     }
 }

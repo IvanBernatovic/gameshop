@@ -11,11 +11,34 @@
 |
 */
 
+/**
+ * Admin login routes
+ */
+Route::get('admin/login', [
+	'as' => 'AdminLoginGet',
+	'middleware' => 'guest',
+	'uses' => 'Admin\MainController@getLogin'
+]);
 
+Route::post('admin/login', [
+	'as' => 'AdminLoginPost',
+	'middleware' => 'guest',
+	'uses' => 'Admin\MainController@postLogin'
+]);
 
-Route::group(['prefix' => 'admin'], function()
-{
-	Route::get('/', 'Admin\MainController@index');
+Route::get('admin/logout', [
+	'as' => 'AdminLogout',
+	'middleware' => ['auth', 'admin'],
+	'uses' => 'Admin\MainController@logout'
+]);
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
+{	
+	Route::get('/', [
+		'as' => 'AdminOverview',
+		'uses' => 'Admin\MainController@index'
+	]);
+
 
 	/**
 	 * Category related routes
@@ -68,6 +91,11 @@ Route::group(['prefix' => 'admin'], function()
 		'uses' => 'Admin\ProductController@index'
 	]);
 
+	Route::get('/products/search', [
+		'as' => 'AdminProductSearch',
+		'uses' => 'Admin\ProductController@search'
+	]);
+
 	Route::get('/products/create', [
 		'as' => 'AdminProductCreate',
 		'uses' => 'Admin\ProductController@create'
@@ -111,6 +139,11 @@ Route::group(['prefix' => 'admin'], function()
 		'uses' => 'Admin\OrderController@index'
 	]);
 
+	Route::get('/orders/filter', [
+		'as' => 'AdminOrderFilter',
+		'uses' => 'Admin\OrderController@filter'
+	]);
+
 	Route::get('/orders/{order}', [
 		'as' => 'AdminOrderShow',
 		'uses' => 'Admin\OrderController@show'
@@ -124,6 +157,21 @@ Route::group(['prefix' => 'admin'], function()
 	Route::patch('/orders/{order}', [
 		'as' => 'AdminOrderUpdate',
 		'uses' => 'Admin\OrderController@update'
+	]);
+
+	/**
+	 * Customer related admin routes
+	 */
+	Route::model('user', 'App\User');
+	
+	Route::get('/customers', [
+		'as' => 'AdminCustomerIndex',
+		'uses' => 'Admin\CustomerController@index'
+	]);
+
+	Route::get('/customers/{user}', [
+		'as' => 'AdminCustomerShow',
+		'uses' => 'Admin\CustomerController@show'
 	]);
 });
 
@@ -227,22 +275,39 @@ Route::group(['middleware' => 'auth'], function(){
 	]);
 });
 
-Route::get('/test', function() {
-	$cartProducts = \Cart::associate('Product', 'App\Models')->content();
-	$products = new Illuminate\Support\Collection;
-	foreach($cartProducts as $item)
-	{
-		$products->push(['product' => \App\Models\Product::find($item->id), 
-			'quantity' => $item->qty]);
-	}
 
-	dd($products);
-});
+Route::get('/contact', [
+	'as' => 'StoreContact',
+	'uses' => 'StoreController@contact'
+]);
+
+
+/**
+ * User profile related routes
+ */
+Route::get('/profile', [
+	'as' => 'StoreUserProfile',
+	'middleware' => 'auth',
+	'uses' => 'UserController@userProfile'
+]);
+
+Route::get('/profile/order/{order}', [
+	'as' => 'StoreUserOrderShow',
+	'middleware' => 'auth',
+	'uses' => 'UserController@showUserOrder'
+]);
+
+
 
 /**
  * Showing products and categories
  * IMPORTANT: Always have this routes on last lines
  */
+Route::get('/search', [
+	'as' => 'StoreProductSearch',
+	'uses' => 'StoreController@searchProduct'
+]);
+
 Route::get('/products/{product}', [
 	'middleware' => 'store.product',
 	'as' => 'StoreProductShow',

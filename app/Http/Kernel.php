@@ -30,6 +30,7 @@ class Kernel extends HttpKernel {
 		'store.category' => 'App\Http\Middleware\AfterStoreCategory',
 		'store.product' => 'App\Http\Middleware\AfterStoreProduct',
 		'checkout' => 'App\Http\Middleware\CheckoutMiddleware',
+		'admin' => 'App\Http\Middleware\AdminMiddleware',
 	];
 
 }

@@ -2,6 +2,14 @@
 
 @section('content')
 
+<form class="form-inline" method="GET" action="{{ route('AdminOrderFilter') }}">
+	<div class="form-group">
+		<label>Filter orders </label>
+		{!! Form::select('status_code_id', \App\Models\StatusCode::lists('name', 'id'), null, ['class' => 'form-control', 'id' => 'orderFilter', 'name' => 'orderFilter']) !!}
+	</div>
+	<button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
 <div class="categories">
 	<table class="table table-hover">
 		<thead>
