@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Store;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Events\OrderWasPlaced;
 use App\Http\Controllers\Controller;
-
-use Cart;
+use App\Http\Requests;
 use App\Http\Requests\Shopping\ShippingAddressRequest;
-
-use Auth;
 use App\Models\Address;
 use App\Models\Order;
 use App\Models\OrderProduct;
-
+use Auth;
+use Cart;
+use Event;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
 class OrderController extends Controller
@@ -134,6 +132,8 @@ class OrderController extends Controller
 				'price' => (float) $product['product']->price * $product['quantity']
 			]);
 		}
+
+        Event::fire(new OrderWasPlaced($order));
 
 		Cart::destroy();
 
