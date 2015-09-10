@@ -22,6 +22,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         $this->composeSidebarNavigation();
         $this->composeNewProductsPanel();
+        $this->composeDiscountedProductsPanel();
         $this->composeCartPanel();
         $this->composeCartInstance();
         $this->composeAdminSidebar();
@@ -56,6 +57,16 @@ class ViewComposerServiceProvider extends ServiceProvider
         view()->composer('store.products.new-products', function($view){
             $view->with('products', Product::where('active', 1)
                                             ->where('new', 1)
+                                            ->orderBy('created_at', 'DESC')
+                                            ->take(8)->get());
+        });
+    }
+
+    private function composeDiscountedProductsPanel()
+    {
+        view()->composer('store.products.discounted-products', function($view){
+            $view->with('products', Product::where('active', 1)
+                                            ->where('discounted_price', '!=', "NULL")
                                             ->orderBy('created_at', 'DESC')
                                             ->take(8)->get());
         });

@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\UserIsRegistered;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Mail;
 
 class UserRegistrationConfirmation
 {
@@ -26,6 +27,8 @@ class UserRegistrationConfirmation
      */
     public function handle(UserIsRegistered $event)
     {
-        // Send an email with confirmation link
+        Mail::send('emails.confirm-registration', ['user' => $event->user], function ($m) use ($user) {
+            $m->to($event->user->email, $event->user->name)->subject('Gameshop - Confirm registration');
+        });
     }
 }

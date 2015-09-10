@@ -13,9 +13,4 @@
     <li class="{{ Active::routePattern('AdminProduct*') }}"><a href="{{ route('AdminProductIndex') }}">Products</a></li>
     <li class="{{ Active::routePattern('AdminCustomer*') }}"><a href="{{ route('AdminCustomerIndex') }}">Customers</a></li>
   </ul>
-  <ul class="nav nav-sidebar">
-    <li class=""><a href="">Administration</a></li>
-    <li class=""><a href="">One more nav</a></li>
-    <li class=""><a href="">Another nav item</a></li>
-  </ul>
 </div>

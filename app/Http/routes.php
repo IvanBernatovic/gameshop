@@ -11,14 +11,34 @@
 |
 */
 
+/**
+ * Admin login routes
+ */
+Route::get('admin/login', [
+	'as' => 'AdminLoginGet',
+	'middleware' => 'guest',
+	'uses' => 'Admin\MainController@getLogin'
+]);
 
+Route::post('admin/login', [
+	'as' => 'AdminLoginPost',
+	'middleware' => 'guest',
+	'uses' => 'Admin\MainController@postLogin'
+]);
 
-Route::group(['prefix' => 'admin'], function()
+Route::get('admin/logout', [
+	'as' => 'AdminLogout',
+	'middleware' => ['auth', 'admin'],
+	'uses' => 'Admin\MainController@logout'
+]);
+
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function()
 {	
 	Route::get('/', [
 		'as' => 'AdminOverview',
 		'uses' => 'Admin\MainController@index'
 	]);
+
 
 	/**
 	 * Category related routes
@@ -255,10 +275,39 @@ Route::group(['middleware' => 'auth'], function(){
 	]);
 });
 
+
+Route::get('/contact', [
+	'as' => 'StoreContact',
+	'uses' => 'StoreController@contact'
+]);
+
+
+/**
+ * User profile related routes
+ */
+Route::get('/profile', [
+	'as' => 'StoreUserProfile',
+	'middleware' => 'auth',
+	'uses' => 'UserController@userProfile'
+]);
+
+Route::get('/profile/order/{order}', [
+	'as' => 'StoreUserOrderShow',
+	'middleware' => 'auth',
+	'uses' => 'UserController@showUserOrder'
+]);
+
+
+
 /**
  * Showing products and categories
  * IMPORTANT: Always have this routes on last lines
  */
+Route::get('/search', [
+	'as' => 'StoreProductSearch',
+	'uses' => 'StoreController@searchProduct'
+]);
+
 Route::get('/products/{product}', [
 	'middleware' => 'store.product',
 	'as' => 'StoreProductShow',
