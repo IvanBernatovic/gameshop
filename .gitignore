@@ -3,8 +3,8 @@
 .env
 
 # Ignore Sublime Text related files
-gameshop.sublime-project
-gameshop.sublime-workspace
+*.sublime-project
+*.sublime-workspace
 
 # Ignore files in img and img/thumb folders, except folders themselves and no_product_img
 public/img/*
