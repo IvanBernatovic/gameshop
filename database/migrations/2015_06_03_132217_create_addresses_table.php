@@ -23,6 +23,15 @@ class CreateAddressesTable extends Migration
             $table->string('city');
             
             $table->timestamps();
+
+            /**
+             * Indices
+             */
+            $table->foreign('country_id')
+                ->references('id')->on('countries');
+                
+            $table->foreign('state_id')
+                ->references('id')->on('states');
         });
     }
 

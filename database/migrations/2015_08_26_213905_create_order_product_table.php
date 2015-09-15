@@ -1,4 +1,4 @@
-<?php
+;<?php
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
@@ -21,6 +21,15 @@ class CreateOrderProductTable extends Migration
             $table->float('price', 8,2);
 
             $table->timestamps();
+
+            /**
+             * Indices
+             */
+            $table->foreign('order_id')
+                ->references('id')->on('orders');
+
+            $table->foreign('product_id')
+                ->references('id')->on('products');
         });
     }
 

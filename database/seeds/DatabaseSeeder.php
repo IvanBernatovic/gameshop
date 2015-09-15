@@ -17,22 +17,12 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('UserTableSeeder');
 		//Seed the countries
 		$this->call('CountriesSeeder');
-		$this->command->info('Seeded the countries!');
 
 		// Seed the states
 		$this->call('StatesSeeder');	
-		$this->command->info('Seeded the states!');
-		$this->call('MigrationsTableSeeder');
-		$this->call('UsersTableSeeder');
-		$this->call('CountriesTableSeeder');
-		$this->call('StatesTableSeeder');
-		$this->call('CategoriesTableSeeder');
-		$this->call('AddressesTableSeeder');
-		$this->call('ProductsTableSeeder');
+		$this->call('RolesTableSeeder');
 		$this->call('StatusCodesTableSeeder');
 		$this->call('PaymentMethodsTableSeeder');
-		$this->call('OrdersTableSeeder');
-		$this->call('OrderProductTableSeeder');
 	}
 
 }

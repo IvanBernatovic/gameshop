@@ -38,6 +38,12 @@ class CreateUsersTable extends Migration {
 
 			$table->rememberToken();
 			$table->timestamps();
+
+			/**
+			 * Indices
+			 */
+			$table->foreign('address_id')
+				->references('id')->on('addresses');
 		});
 	}
 
