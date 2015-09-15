@@ -27,8 +27,10 @@ class UserRegistrationConfirmation
      */
     public function handle(UserIsRegistered $event)
     {
-        Mail::send('emails.confirm-registration', ['user' => $event->user], function ($m) use ($user) {
-            $m->to($event->user->email, $event->user->name)->subject('Gameshop - Confirm registration');
+        $user = $event->user;
+        Mail::send('emails.confirm-registration', ['user' => $user], function ($m) use ($user) {
+            $m->from('gameshop.zavrsni.rad@gmail.com', 'Gameshop - Activate account');
+            $m->to($user->email, $user->name)->subject('Gameshop - Confirm registration');
         });
     }
 }
