@@ -13,4 +13,4 @@ Laravel based webshop for video games, consoles and console accessories. Persona
 ## Back-end admin functionalities
 * CRUD operations on products and categories
 * proccessing orders
-* overciew of all users
+* overview of all users
